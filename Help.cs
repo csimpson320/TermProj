@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TermProj
 {
-    public partial class FrmTermProj : Form
+    public partial class Help : Form
     {
-        public FrmTermProj()
+        public Help()
         {
             InitializeComponent();
         }

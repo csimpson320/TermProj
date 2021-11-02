@@ -16,7 +16,7 @@ namespace TermProj
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTermProj());
+            Application.Run(new Home());
         }
     }
 }

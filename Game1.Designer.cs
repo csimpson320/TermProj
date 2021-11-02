@@ -29,6 +29,7 @@ namespace TermProj
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labTimer = new System.Windows.Forms.Label();
             this.txtBox44 = new System.Windows.Forms.TextBox();
             this.txtBox43 = new System.Windows.Forms.TextBox();
@@ -57,15 +58,17 @@ namespace TermProj
             this.txtBox00 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abortGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameSolutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.g1_Time = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -378,6 +381,36 @@ namespace TermProj
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
+            // newGameToolStripMenuItem
+            // 
+            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newGameToolStripMenuItem.Text = "New Game";
+            // 
+            // pauseGameToolStripMenuItem
+            // 
+            this.pauseGameToolStripMenuItem.Name = "pauseGameToolStripMenuItem";
+            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pauseGameToolStripMenuItem.Text = "Pause Game";
+            // 
+            // abortGameToolStripMenuItem
+            // 
+            this.abortGameToolStripMenuItem.Name = "abortGameToolStripMenuItem";
+            this.abortGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.abortGameToolStripMenuItem.Text = "Abort Game";
+            // 
+            // gameSolutionToolStripMenuItem
+            // 
+            this.gameSolutionToolStripMenuItem.Name = "gameSolutionToolStripMenuItem";
+            this.gameSolutionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gameSolutionToolStripMenuItem.Text = "Game Solution";
+            // 
+            // gameHistoryToolStripMenuItem
+            // 
+            this.gameHistoryToolStripMenuItem.Name = "gameHistoryToolStripMenuItem";
+            this.gameHistoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gameHistoryToolStripMenuItem.Text = "Game History";
+            // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -390,56 +423,45 @@ namespace TermProj
             // gameToolStripMenuItem
             // 
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            this.gameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.gameToolStripMenuItem.Text = "Game";
+            this.gameToolStripMenuItem.Click += new System.EventHandler(this.gameToolStripMenuItem_Click);
             // 
             // applicationToolStripMenuItem
             // 
             this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
-            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.applicationToolStripMenuItem.Text = "Application";
-            // 
-            // newGameToolStripMenuItem
-            // 
-            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.newGameToolStripMenuItem.Text = "New Game";
-            // 
-            // pauseGameToolStripMenuItem
-            // 
-            this.pauseGameToolStripMenuItem.Name = "pauseGameToolStripMenuItem";
-            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pauseGameToolStripMenuItem.Text = "Pause Game";
-            // 
-            // abortGameToolStripMenuItem
-            // 
-            this.abortGameToolStripMenuItem.Name = "abortGameToolStripMenuItem";
-            this.abortGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.abortGameToolStripMenuItem.Text = "Abort Game";
-            // 
-            // gameSolutionToolStripMenuItem
-            // 
-            this.gameSolutionToolStripMenuItem.Name = "gameSolutionToolStripMenuItem";
-            this.gameSolutionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gameSolutionToolStripMenuItem.Text = "Game Solution";
-            // 
-            // gameHistoryToolStripMenuItem
-            // 
-            this.gameHistoryToolStripMenuItem.Name = "gameHistoryToolStripMenuItem";
-            this.gameHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gameHistoryToolStripMenuItem.Text = "Game History";
+            this.applicationToolStripMenuItem.Click += new System.EventHandler(this.applicationToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
+            // gameTimer
+            // 
+            this.gameTimer.Interval = 1000;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+            // 
+            // g1_Time
+            // 
+            this.g1_Time.AutoSize = true;
+            this.g1_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.g1_Time.Location = new System.Drawing.Point(163, 246);
+            this.g1_Time.Name = "g1_Time";
+            this.g1_Time.Size = new System.Drawing.Size(0, 20);
+            this.g1_Time.TabIndex = 69;
             // 
             // Game1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 299);
+            this.ControlBox = false;
+            this.Controls.Add(this.g1_Time);
             this.Controls.Add(this.labTimer);
             this.Controls.Add(this.txtBox44);
             this.Controls.Add(this.txtBox43);
@@ -515,5 +537,7 @@ namespace TermProj
         private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Label g1_Time;
     }
 }

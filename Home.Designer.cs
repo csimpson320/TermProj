@@ -81,17 +81,18 @@ namespace TermProj
             this.game1ToolStripMenuItem.Name = "game1ToolStripMenuItem";
             this.game1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.game1ToolStripMenuItem.Text = "Game 1";
+            this.game1ToolStripMenuItem.Click += new System.EventHandler(this.game1ToolStripMenuItem_Click);
             // 
             // game2ToolStripMenuItem
             // 
             this.game2ToolStripMenuItem.Name = "game2ToolStripMenuItem";
-            this.game2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.game2ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.game2ToolStripMenuItem.Text = "Game 2";
             // 
             // game3ToolStripMenuItem
             // 
             this.game3ToolStripMenuItem.Name = "game3ToolStripMenuItem";
-            this.game3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.game3ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.game3ToolStripMenuItem.Text = "Game 3";
             // 
             // historyToolStripMenuItem
@@ -99,18 +100,21 @@ namespace TermProj
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
             this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.historyToolStripMenuItem.Text = "History";
+            this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.quitToolStripMenuItem.Text = "Quit";
+            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -137,6 +141,7 @@ namespace TermProj
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 209);
+            this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labSelect);

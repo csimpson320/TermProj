@@ -92,6 +92,7 @@ namespace TermProj
             this.txtBox44.Size = new System.Drawing.Size(43, 26);
             this.txtBox44.TabIndex = 60;
             this.txtBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox44.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox43
             // 
@@ -103,6 +104,7 @@ namespace TermProj
             this.txtBox43.Size = new System.Drawing.Size(43, 26);
             this.txtBox43.TabIndex = 59;
             this.txtBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox43.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox42
             // 
@@ -114,6 +116,7 @@ namespace TermProj
             this.txtBox42.Size = new System.Drawing.Size(43, 26);
             this.txtBox42.TabIndex = 58;
             this.txtBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox42.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox41
             // 
@@ -125,6 +128,7 @@ namespace TermProj
             this.txtBox41.Size = new System.Drawing.Size(43, 26);
             this.txtBox41.TabIndex = 57;
             this.txtBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox41.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox40
             // 
@@ -136,6 +140,7 @@ namespace TermProj
             this.txtBox40.Size = new System.Drawing.Size(43, 26);
             this.txtBox40.TabIndex = 56;
             this.txtBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox40.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox34
             // 
@@ -147,6 +152,7 @@ namespace TermProj
             this.txtBox34.Size = new System.Drawing.Size(43, 26);
             this.txtBox34.TabIndex = 55;
             this.txtBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox34.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox33
             // 
@@ -158,6 +164,7 @@ namespace TermProj
             this.txtBox33.Size = new System.Drawing.Size(43, 26);
             this.txtBox33.TabIndex = 54;
             this.txtBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox33.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox32
             // 
@@ -169,6 +176,7 @@ namespace TermProj
             this.txtBox32.Size = new System.Drawing.Size(43, 26);
             this.txtBox32.TabIndex = 53;
             this.txtBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox32.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox31
             // 
@@ -180,6 +188,7 @@ namespace TermProj
             this.txtBox31.Size = new System.Drawing.Size(43, 26);
             this.txtBox31.TabIndex = 52;
             this.txtBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox31.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox30
             // 
@@ -191,6 +200,7 @@ namespace TermProj
             this.txtBox30.Size = new System.Drawing.Size(43, 26);
             this.txtBox30.TabIndex = 51;
             this.txtBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox30.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox24
             // 
@@ -202,6 +212,7 @@ namespace TermProj
             this.txtBox24.Size = new System.Drawing.Size(43, 26);
             this.txtBox24.TabIndex = 50;
             this.txtBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox24.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox23
             // 
@@ -213,6 +224,7 @@ namespace TermProj
             this.txtBox23.Size = new System.Drawing.Size(43, 26);
             this.txtBox23.TabIndex = 49;
             this.txtBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox23.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox22
             // 
@@ -224,6 +236,7 @@ namespace TermProj
             this.txtBox22.Size = new System.Drawing.Size(43, 26);
             this.txtBox22.TabIndex = 48;
             this.txtBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox22.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox21
             // 
@@ -235,6 +248,7 @@ namespace TermProj
             this.txtBox21.Size = new System.Drawing.Size(43, 26);
             this.txtBox21.TabIndex = 47;
             this.txtBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox21.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox20
             // 
@@ -246,6 +260,7 @@ namespace TermProj
             this.txtBox20.Size = new System.Drawing.Size(43, 26);
             this.txtBox20.TabIndex = 46;
             this.txtBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox20.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox14
             // 
@@ -257,6 +272,7 @@ namespace TermProj
             this.txtBox14.Size = new System.Drawing.Size(43, 26);
             this.txtBox14.TabIndex = 45;
             this.txtBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox14.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox13
             // 
@@ -268,6 +284,7 @@ namespace TermProj
             this.txtBox13.Size = new System.Drawing.Size(43, 26);
             this.txtBox13.TabIndex = 44;
             this.txtBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox13.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox12
             // 
@@ -279,6 +296,7 @@ namespace TermProj
             this.txtBox12.Size = new System.Drawing.Size(43, 26);
             this.txtBox12.TabIndex = 43;
             this.txtBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox12.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox11
             // 
@@ -290,6 +308,7 @@ namespace TermProj
             this.txtBox11.Size = new System.Drawing.Size(43, 26);
             this.txtBox11.TabIndex = 42;
             this.txtBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox11.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox10
             // 
@@ -301,6 +320,7 @@ namespace TermProj
             this.txtBox10.Size = new System.Drawing.Size(43, 26);
             this.txtBox10.TabIndex = 41;
             this.txtBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox10.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox04
             // 
@@ -312,6 +332,7 @@ namespace TermProj
             this.txtBox04.Size = new System.Drawing.Size(43, 26);
             this.txtBox04.TabIndex = 40;
             this.txtBox04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox04.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox03
             // 
@@ -323,6 +344,7 @@ namespace TermProj
             this.txtBox03.Size = new System.Drawing.Size(43, 26);
             this.txtBox03.TabIndex = 39;
             this.txtBox03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox03.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox02
             // 
@@ -334,6 +356,7 @@ namespace TermProj
             this.txtBox02.Size = new System.Drawing.Size(43, 26);
             this.txtBox02.TabIndex = 38;
             this.txtBox02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox02.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox01
             // 
@@ -345,6 +368,7 @@ namespace TermProj
             this.txtBox01.Size = new System.Drawing.Size(43, 26);
             this.txtBox01.TabIndex = 37;
             this.txtBox01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox01.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // txtBox00
             // 
@@ -356,6 +380,7 @@ namespace TermProj
             this.txtBox00.Size = new System.Drawing.Size(43, 26);
             this.txtBox00.TabIndex = 36;
             this.txtBox00.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBox00.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -392,6 +417,7 @@ namespace TermProj
             this.pauseGameToolStripMenuItem.Name = "pauseGameToolStripMenuItem";
             this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pauseGameToolStripMenuItem.Text = "Pause Game";
+            this.pauseGameToolStripMenuItem.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // abortGameToolStripMenuItem
             // 

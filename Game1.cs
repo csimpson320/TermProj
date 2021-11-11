@@ -15,9 +15,9 @@ namespace TermProj
         Help fmr_help;
         private uint ticks;
         TextBox[,] matrix;
-        List<short> matrixNums = new List<short>(25);
+        List<int> matrixNums = new List<int>(25);
         Random num = new Random();
-        short prevNum;
+        int prevNum;
         bool startWithR1 = false;
         //(short, short) r1Location;
 
@@ -71,14 +71,14 @@ namespace TermProj
         private void Check(object sender, EventArgs e)
         {
             TextBox uInput = (TextBox)sender;
-            short uNum;
+            int uNum;
 
             if (uInput.Text != "")
             {
                 try
                 {
                     //check if users input is valid
-                    uNum = short.Parse(uInput.Text);
+                    uNum = Int32.Parse(uInput.Text);
 
                     if (uNum > 25)
                     {
@@ -120,7 +120,7 @@ namespace TermProj
             }
         }
 
-        private (short r, short c) GetLocation(short num)
+        private (int r, int c) GetLocation(int num)
         {
             //if (startWithR1 == false)
             //{
@@ -136,8 +136,8 @@ namespace TermProj
             //                return (row, col);
             //        }
             //}
-            for (short row = 0; row <= 4; row++)
-                for (short col = 0; col <= 4; col++)
+            for (int row = 0; row <= 4; row++)
+                for (int col = 0; col <= 4; col++)
                 {
                     if (matrix[row, col].Text == num.ToString())
                         return (row, col);
@@ -145,24 +145,56 @@ namespace TermProj
             return (-1, -1);
         }
 
-        private List<(short, short)> FindAdjCells(short num)
+        private List<(int, int)> FindAdjCells(int num)
         {
-            (short, short) cell = GetLocation(num);
-            List<(short, short)> adjCells = new List<(short, short)> { };
+            (int, int) cell = GetLocation(num);
+            List<(int, int)> adjCells = new List<(int, int)> { };
 
-            if (cell.Item1 == 0 && cell.Item2 == 0)
+            if (cell.Item1 == 0 && cell.Item2 == 0) //EDGE CELLS
             {
-                return adjCells = new List<(short, short)> { (0, 1), (1, 0), (1, 1) };
+                return adjCells = new List<(int, int)> { (0, 1), (1, 0), (1, 1) };
+            }
+            else if (cell.Item1 == 4 && cell.Item2 == 0) //EDGE CELLS
+            {
+                return adjCells = new List<(int, int)> { (3, 0), (3, 1), (4, 1) };
+            }
+            else if (cell.Item1 == 0 && cell.Item2 == 4) //EDGE CELLS
+            {
+                return adjCells = new List<(int, int)> { (0, 3), (1, 3), (1, 4) };
+            }
+            else if (cell.Item1 == 4 && cell.Item2 == 4) //EDGE CELLS
+            {
+                return adjCells = new List<(int, int)> { (4, 3), (3, 3), (3, 4) };
+            }
+            else if ((cell.Item1 >= 1 && cell.Item1 <= 3) && (cell.Item2 >= 1 && cell.Item2 <= 3)) //INNER CELLS
+            {
+                return adjCells = new List<(int, int)> { (cell.Item1 - 1, cell.Item2 - 1), (cell.Item1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2), (cell.Item1 + 1, cell.Item2 + 1), (cell.Item1, cell.Item2 + 1), (cell.Item1 - 1, cell.Item2 + 1), (cell.Item1 - 1, cell.Item2) };
+            }
+            else if ((cell.Item1 >= 1 && cell.Item1 <= 3) && cell.Item2 == 0) //LEFT INNER WALL CELLS
+            {
+                return adjCells = new List<(int, int)> { (cell.Item1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2), (cell.Item1 + 1, cell.Item2 + 1), (cell.Item1, cell.Item2 + 1) };
+            }
+            else if (cell.Item1 == 0 && (cell.Item2 >= 1 && cell.Item2 <= 3)) //TOP INNER WALL CELLS
+            {
+                return adjCells = new List<(int, int)> { (cell.Item1 - 1, cell.Item2), (cell.Item1 - 1, cell.Item2 + 1), (cell.Item1, cell.Item2 + 1), (cell.Item1 + 1, cell.Item2 + 1), (cell.Item1 + 1, cell.Item2) };
+            }
+            else if ((cell.Item1 >= 1 && cell.Item1 <= 3) && cell.Item2 == 4) //RIGHT INNER WALL CELLS
+            {
+                return adjCells = new List<(int, int)> { (cell.Item1, cell.Item2 - 1), (cell.Item1 - 1, cell.Item2 - 1), (cell.Item1 - 1, cell.Item2), (cell.Item1 - 1, cell.Item2 + 1), (cell.Item1, cell.Item2 + 1) };
+            }
+            else if (cell.Item1 == 4 && (cell.Item2 >= 1 && cell.Item2 <= 3)) //BOTTOM INNER WALL CELLS
+            {
+                return adjCells = new List<(int, int)> { (cell.Item1 - 1, cell.Item2), (cell.Item1 - 1, cell.Item2 - 1), (cell.Item1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2) };
             }
             return adjCells;
         }
 
-        private bool CheckAdjCells(short num, short prev)
+        private bool CheckAdjCells(int num, int prev)
         {
-            List<(short, short)> adjCells = FindAdjCells(prev);
+            List<(int, int)> adjCells = FindAdjCells(prev);
             //int length = adjCells.Count();
 
-            foreach ((short, short) location in adjCells)
+            foreach ((int, int) location in adjCells)
             {
                 if (matrix[location.Item1, location.Item2].Text == num.ToString())
                 {
@@ -184,133 +216,157 @@ namespace TermProj
                     matrix[0, 0].TextChanged -= Check;
                     matrix[0, 0].Text = "1";
                     break;
-                //case 2:
-                //    matrix[0, 1].Text = "1";
-                //    matrix[0, 1].ForeColor = Color.Red;
-                //    matrix[0, 1].ReadOnly = true;
-                //    break;
-                //case 3:
-                //    matrix[0, 2].Text = "1";
-                //    matrix[0, 2].ForeColor = Color.Red;
-                //    matrix[0, 2].ReadOnly = true;
-                //    break;
-                //case 4:
-                //    matrix[0, 3].Text = "1";
-                //    matrix[0, 3].ForeColor = Color.Red;
-                //    matrix[0, 3].ReadOnly = true;
-                //    break;
-                //case 5:
-                //    matrix[0, 4].Text = "1";
-                //    matrix[0, 4].ForeColor = Color.Red;
-                //    matrix[0, 4].ReadOnly = true;
-                //    break;
-                //case 6:
-                //    matrix[1, 0].Text = "1";
-                //    matrix[1, 0].ForeColor = Color.Red;
-                //    matrix[1, 0].ReadOnly = true;
-                //    break;
-                //case 7:
-                //    matrix[1, 1].Text = "1";
-                //    matrix[1, 1].ForeColor = Color.Red;
-                //    matrix[1, 1].ReadOnly = true;
-                //    break;
-                //case 8:
-                //    matrix[1, 2].Text = "1";
-                //    matrix[1, 2].ForeColor = Color.Red;
-                //    matrix[1, 2].ReadOnly = true;
-                //    break;
-                //case 9:
-                //    matrix[1, 3].Text = "1";
-                //    matrix[1, 3].ForeColor = Color.Red;
-                //    matrix[1, 3].ReadOnly = true;
-                //    break;
-                //case 10:
-                //    matrix[1, 4].Text = "1";
-                //    matrix[1, 4].ForeColor = Color.Red;
-                //    matrix[1, 4].ReadOnly = true;
-                //    break;
-                //case 11:
-                //    matrix[2, 0].Text = "1";
-                //    matrix[2, 0].ForeColor = Color.Red;
-                //    matrix[2, 0].ReadOnly = true;
-                //    break;
-                //case 12:
-                //    matrix[2, 1].Text = "1";
-                //    matrix[2, 1].ForeColor = Color.Red;
-                //    matrix[2, 1].ReadOnly = true;
-                //    break;
-                //case 13:
-                //    matrix[2, 2].Text = "1";
-                //    matrix[2, 2].ForeColor = Color.Red;
-                //    matrix[2, 2].ReadOnly = true;
-                //    break;
-                //case 14:
-                //    matrix[2, 3].Text = "1";
-                //    matrix[2, 3].ForeColor = Color.Red;
-                //    matrix[2, 3].ReadOnly = true;
-                //    break;
-                //case 15:
-                //    matrix[2, 4].Text = "1";
-                //    matrix[2, 4].ForeColor = Color.Red;
-                //    matrix[2, 4].ReadOnly = true;
-                //    break;
-                //case 16:
-                //    matrix[3, 0].Text = "1";
-                //    matrix[3, 0].ForeColor = Color.Red;
-                //    matrix[3, 0].ReadOnly = true;
-                //    break;
-                //case 17:
-                //    matrix[3, 1].Text = "1";
-                //    matrix[3, 1].ForeColor = Color.Red;
-                //    matrix[3, 1].ReadOnly = true;
-                //    break;
-                //case 18:
-                //    matrix[3, 2].Text = "1";
-                //    matrix[3, 2].ForeColor = Color.Red;
-                //    matrix[3, 2].ReadOnly = true;
-                //    break;
-                //case 19:
-                //    matrix[3, 3].Text = "1";
-                //    matrix[3, 3].ForeColor = Color.Red;
-                //    matrix[3, 3].ReadOnly = true;
-                //    break;
-                //case 20:
-                //    matrix[3, 4].Text = "1";
-                //    matrix[3, 4].ForeColor = Color.Red;
-                //    matrix[3, 4].ReadOnly = true;
-                //    break;
-                //case 21:
-                //    matrix[4, 0].Text = "1";
-                //    matrix[4, 0].ForeColor = Color.Red;
-                //    matrix[4, 0].ReadOnly = true;
-                //    break;
-                //case 22:
-                //    matrix[4, 1].Text = "1";
-                //    matrix[4, 1].ForeColor = Color.Red;
-                //    matrix[4, 1].ReadOnly = true;
-                //    break;
-                //case 23:
-                //    matrix[4, 2].Text = "1";
-                //    matrix[4, 2].ForeColor = Color.Red;
-                //    matrix[4, 2].ReadOnly = true;
-                //    break;
-                //case 24:
-                //    matrix[4, 3].Text = "1";
-                //    matrix[4, 3].ForeColor = Color.Red;
-                //    matrix[4, 3].ReadOnly = true;
-                //    break;
-                //case 25:
-                //    matrix[4, 4].Text = "1";
-                //    matrix[4, 4].ForeColor = Color.Red;
-                //    matrix[4, 4].ReadOnly = true;
-                //    break;
-                default:
-                    matrix[0, 0].ForeColor = Color.Red;
-                    matrix[0, 0].ReadOnly = true;
-                    matrix[0, 0].TextChanged -= Check;
-                    matrix[0, 0].Text = "1";
-                    //r1Location = (0, 0);
+                case 2:
+                    matrix[0, 1].ForeColor = Color.Red;
+                    matrix[0, 1].ReadOnly = true;
+                    matrix[0, 1].TextChanged -= Check;
+                    matrix[0, 1].Text = "1";
                     break;
+                case 3:
+                    matrix[0, 2].ForeColor = Color.Red;
+                    matrix[0, 2].ReadOnly = true;
+                    matrix[0, 2].TextChanged -= Check;
+                    matrix[0, 2].Text = "1";
+                    break;
+                case 4:
+                    matrix[0, 3].ForeColor = Color.Red;
+                    matrix[0, 3].ReadOnly = true;
+                    matrix[0, 3].TextChanged -= Check;
+                    matrix[0, 3].Text = "1";
+                    break;
+                case 5:
+                    matrix[0, 4].ForeColor = Color.Red;
+                    matrix[0, 4].ReadOnly = true;
+                    matrix[0, 4].TextChanged -= Check;
+                    matrix[0, 4].Text = "1";
+                    break;
+                case 6:
+                    matrix[1, 0].ForeColor = Color.Red;
+                    matrix[1, 0].ReadOnly = true;
+                    matrix[1, 0].TextChanged -= Check;
+                    matrix[1, 0].Text = "1";
+                    break;
+                case 7:
+                    matrix[1, 1].ForeColor = Color.Red;
+                    matrix[1, 1].ReadOnly = true;
+                    matrix[1, 1].TextChanged -= Check;
+                    matrix[1, 1].Text = "1";
+                    break;
+                case 8:
+                    matrix[1, 2].ForeColor = Color.Red;
+                    matrix[1, 2].ReadOnly = true;
+                    matrix[1, 2].TextChanged -= Check;
+                    matrix[1, 2].Text = "1";
+                    break;
+                case 9:
+                    matrix[1, 3].ForeColor = Color.Red;
+                    matrix[1, 3].ReadOnly = true;
+                    matrix[1, 3].TextChanged -= Check;
+                    matrix[1, 3].Text = "1";
+                    break;
+                case 10:
+                    matrix[1, 4].ForeColor = Color.Red;
+                    matrix[1, 4].ReadOnly = true;
+                    matrix[1, 4].TextChanged -= Check;
+                    matrix[1, 4].Text = "1";
+                    break;
+                case 11:
+                    matrix[2, 0].ForeColor = Color.Red;
+                    matrix[2, 0].ReadOnly = true;
+                    matrix[2, 0].TextChanged -= Check;
+                    matrix[2, 0].Text = "1";
+                    break;
+                case 12:
+                    matrix[2, 1].ForeColor = Color.Red;
+                    matrix[2, 1].ReadOnly = true;
+                    matrix[2, 1].TextChanged -= Check;
+                    matrix[2, 1].Text = "1";
+                    break;
+                case 13:
+                    matrix[2, 2].ForeColor = Color.Red;
+                    matrix[2, 2].ReadOnly = true;
+                    matrix[2, 2].TextChanged -= Check;
+                    matrix[2, 2].Text = "1";
+                    break;
+                case 14:
+                    matrix[2, 3].ForeColor = Color.Red;
+                    matrix[2, 3].ReadOnly = true;
+                    matrix[2, 3].TextChanged -= Check;
+                    matrix[2, 3].Text = "1";
+                    break;
+                case 15:
+                    matrix[2, 4].ForeColor = Color.Red;
+                    matrix[2, 4].ReadOnly = true;
+                    matrix[2, 4].TextChanged -= Check;
+                    matrix[2, 4].Text = "1";
+                    break;
+                case 16:
+                    matrix[3, 0].ForeColor = Color.Red;
+                    matrix[3, 0].ReadOnly = true;
+                    matrix[3, 0].TextChanged -= Check;
+                    matrix[3, 0].Text = "1";
+                    break;
+                case 17:
+                    matrix[3, 1].ForeColor = Color.Red;
+                    matrix[3, 1].ReadOnly = true;
+                    matrix[3, 1].TextChanged -= Check;
+                    matrix[3, 1].Text = "1";
+                    break;
+                case 18:
+                    matrix[3, 2].ForeColor = Color.Red;
+                    matrix[3, 2].ReadOnly = true;
+                    matrix[3, 2].TextChanged -= Check;
+                    matrix[3, 2].Text = "1";
+                    break;
+                case 19:
+                    matrix[3, 3].ForeColor = Color.Red;
+                    matrix[3, 3].ReadOnly = true;
+                    matrix[3, 3].TextChanged -= Check;
+                    matrix[3, 3].Text = "1";
+                    break;
+                case 20:
+                    matrix[3, 4].ForeColor = Color.Red;
+                    matrix[3, 4].ReadOnly = true;
+                    matrix[3, 4].TextChanged -= Check;
+                    matrix[3, 4].Text = "1";
+                    break;
+                case 21:
+                    matrix[4, 0].ForeColor = Color.Red;
+                    matrix[4, 0].ReadOnly = true;
+                    matrix[4, 0].TextChanged -= Check;
+                    matrix[4, 0].Text = "1";
+                    break;
+                case 22:
+                    matrix[4, 1].ForeColor = Color.Red;
+                    matrix[4, 1].ReadOnly = true;
+                    matrix[4, 1].TextChanged -= Check;
+                    matrix[4, 1].Text = "1";
+                    break;
+                case 23:
+                    matrix[4, 2].ForeColor = Color.Red;
+                    matrix[4, 2].ReadOnly = true;
+                    matrix[4, 2].TextChanged -= Check;
+                    matrix[4, 2].Text = "1";
+                    break;
+                case 24:
+                    matrix[4, 3].ForeColor = Color.Red;
+                    matrix[4, 3].ReadOnly = true;
+                    matrix[4, 3].TextChanged -= Check;
+                    matrix[4, 3].Text = "1";
+                    break;
+                case 25:
+                    matrix[4, 4].ForeColor = Color.Red;
+                    matrix[4, 4].ReadOnly = true;
+                    matrix[4, 4].TextChanged -= Check;
+                    matrix[4, 4].Text = "1";
+                    break;
+                //default:
+                //    matrix[0, 0].ForeColor = Color.Red;
+                //    matrix[0, 0].ReadOnly = true;
+                //    matrix[0, 0].TextChanged -= Check;
+                //    matrix[0, 0].Text = "1";
+                //    //r1Location = (0, 0);
+                //    break;
             }
             matrixNums.Add(1);
         }

@@ -79,7 +79,7 @@ namespace TermProj
             // game1ToolStripMenuItem
             // 
             this.game1ToolStripMenuItem.Name = "game1ToolStripMenuItem";
-            this.game1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.game1ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.game1ToolStripMenuItem.Text = "Game 1";
             this.game1ToolStripMenuItem.Click += new System.EventHandler(this.game1ToolStripMenuItem_Click);
             // 
@@ -148,6 +148,7 @@ namespace TermProj
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matrix Game";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

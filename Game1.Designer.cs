@@ -541,6 +541,7 @@ namespace TermProj
             this.Controls.Add(this.txtBox00);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Game1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

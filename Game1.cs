@@ -13,11 +13,13 @@ namespace TermProj
     public partial class Game1 : Form
     {
         Help fmr_help;
-        private uint ticks;
+        uint ticks;
+        string time;
+        int uNum;
         TextBox[,] matrix;
         List<int> matrixNums = new List<int>(25);
         Random num = new Random();
-        int prevNum;
+        int prevNum, nxtNum;
         bool startWithR1 = false;
         //(short, short) r1Location;
 
@@ -31,8 +33,17 @@ namespace TermProj
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             ticks++;
-            g1_Time.Text = ticks.ToString();
+            //g1_Time.Text = ticks.ToString();
+            TimeSpan t = TimeSpan.FromSeconds(ticks);
+            time = $"{t.Hours}h:{t.Minutes}m:{t.Seconds}s";
+            g1_Time.Text = time;
         }
+
+        //private string GetTime()
+        //{
+        //    TimeSpan t = TimeSpan.FromSeconds(ticks);
+        //    return $""
+        //}
 
         private void gameToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -71,71 +82,117 @@ namespace TermProj
         private void Check(object sender, EventArgs e)
         {
             TextBox uInput = (TextBox)sender;
-            int uNum;
-
-            if (uInput.Text != "")
+            if (uInput.Text == "" == false)
             {
                 try
                 {
+                    if (startWithR1 == false)
+                    {
+                        startWithR1 = true;
+                        prevNum = 1; nxtNum = 2;
+                    }
+
                     //check if users input is valid
                     uNum = Int32.Parse(uInput.Text);
 
-                    if (uNum > 25)
+                    if (uNum < 2 || uNum > 25)
                     {
-                        throw new Exception("Please enter a number between 1-25");
+                        throw new Exception($"{uNum} is invalid. Please enter a number between 2-25");
                     }
 
                     if (matrixNums.Contains(uNum))
                     {
-                        throw new Exception("This number has already been used, please choose the next number.");
-                    }
-
-                    if (startWithR1 == false)
-                    {
-                        startWithR1 = true;
-                        prevNum = 1;
+                        throw new Exception($"{uNum} has already been used, please choose the next number.");
                     }
 
                     if (CheckAdjCells(uNum, prevNum) == false)
                     {
-                        throw new Exception("This location is not valid, please choose another adjancent location.");
+                        Console.WriteLine($"Previous Num = {prevNum}");
+                        throw new Exception($"{uNum} can not be placed in this location, please choose an adjancent location.");
                     }
                     else
                     {
-                        matrixNums.Add(uNum);
+                        if (uNum != nxtNum)
+                        {
+                            //Console.WriteLine($"Previous Num = {prevNum}");
+                            //Console.WriteLine($"Next Num = {nxtNum}");
+                            throw new Exception($"You must enter the next sequential number, please enter {nxtNum}");
+                        }
+                        else
+                        {
+                            matrixNums.Add(uNum);
+                            prevNum++; nxtNum++;
+                            uInput.ReadOnly = true;
+                            uInput.Leave -= Check;
+                            //Console.WriteLine($"Previous Num = {prevNum}");
+                            //Console.WriteLine($"Next Num = {nxtNum}");
+                        }
+                        if (uNum == 25)
+                        {
+                            gameTimer.Stop();
+                            var result = MessageBox.Show("You win the game!\n" +
+                                $"You finished the game in {time}.\n" + "Would you like to start Game 2?", 
+                                "Game Over!", MessageBoxButtons.YesNo);
+                            if (result == DialogResult.No)
+                            {
+                                this.Close();
+                            }
+                        }
                     }
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("Please enter a valid number.", "Invalid Input");
+                    MessageBox.Show("Please enter a valid number.", "Invalid Input!");
                     uInput.Clear();
                     uInput.Focus();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Invalid Input");
+                    MessageBox.Show(ex.Message, "Invalid Input!");
                     uInput.Clear();
                     uInput.Focus();
                 }
             }
         }
 
+        private void Clear(object sender, EventArgs e)
+        {
+            TextBox uInput = (TextBox)sender;
+            try
+            {
+                if (uInput.Text != "")
+                {
+                    if (uInput.Text != prevNum.ToString())
+                    {
+                        throw new Exception("Must clear numbers in reverse order if wish to change location.");
+                    }
+                    else
+                    {
+                        if (matrixNums.Contains(Int32.Parse(uInput.Text)))
+                        {
+                            matrixNums.Remove(Int32.Parse(uInput.Text));
+                        }
+                        prevNum--; nxtNum--;
+                        uInput.Clear();
+                        uInput.ReadOnly = false;
+                        uInput.Leave += Check;
+                        //Console.WriteLine($"Previous Num = {prevNum}");
+                        //Console.WriteLine($"Next Num = {nxtNum}");
+                    }
+                }
+                else
+                {
+                    throw new Exception("There is no number to clear.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!");
+            }
+        }
+
         private (int r, int c) GetLocation(int num)
         {
-            //if (startWithR1 == false)
-            //{
-            //    startWithR1 = true;
-            //    return r1Location;
-            //}
-            //else
-            //{
-            //    for (short row = 0; row <= 4; row++)
-            //        for (short col = 0; col <= 4; col++)
-            //        {
-            //            if (matrix[row, col].Text == num.ToString())
-            //                return (row, col);
-            //        }
-            //}
             for (int row = 0; row <= 4; row++)
                 for (int col = 0; col <= 4; col++)
                 {
@@ -150,41 +207,41 @@ namespace TermProj
             (int, int) cell = GetLocation(num);
             List<(int, int)> adjCells = new List<(int, int)> { };
 
-            if (cell.Item1 == 0 && cell.Item2 == 0) //EDGE CELLS
+            if (cell.Item1 == 0 && cell.Item2 == 0) //TOP LEFT EDGE CELL
             {
                 return adjCells = new List<(int, int)> { (0, 1), (1, 0), (1, 1) };
             }
-            else if (cell.Item1 == 4 && cell.Item2 == 0) //EDGE CELLS
+            else if (cell.Item1 == 4 && cell.Item2 == 0) //BOTTOM LEFT EDGE CELL
             {
                 return adjCells = new List<(int, int)> { (3, 0), (3, 1), (4, 1) };
             }
-            else if (cell.Item1 == 0 && cell.Item2 == 4) //EDGE CELLS
+            else if (cell.Item1 == 4 && cell.Item2 == 4) //BOTTOM RIGHT EDGE CELL
+            {
+                return adjCells = new List<(int, int)> { (3, 4), (3, 3), (4, 3) };
+            }
+            else if (cell.Item1 == 0 && cell.Item2 == 4) //TOP RIGHT EDGE CELL
             {
                 return adjCells = new List<(int, int)> { (0, 3), (1, 3), (1, 4) };
             }
-            else if (cell.Item1 == 4 && cell.Item2 == 4) //EDGE CELLS
-            {
-                return adjCells = new List<(int, int)> { (4, 3), (3, 3), (3, 4) };
-            }
-            else if ((cell.Item1 >= 1 && cell.Item1 <= 3) && (cell.Item2 >= 1 && cell.Item2 <= 3)) //INNER CELLS
+            else if ((cell.Item1 >= 1 && cell.Item1 <= 3) && (cell.Item2 >= 1 && cell.Item2 <= 3)) //INNER MIDDLE CELLS
             {
                 return adjCells = new List<(int, int)> { (cell.Item1 - 1, cell.Item2 - 1), (cell.Item1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2), (cell.Item1 + 1, cell.Item2 + 1), (cell.Item1, cell.Item2 + 1), (cell.Item1 - 1, cell.Item2 + 1), (cell.Item1 - 1, cell.Item2) };
             }
             else if ((cell.Item1 >= 1 && cell.Item1 <= 3) && cell.Item2 == 0) //LEFT INNER WALL CELLS
             {
-                return adjCells = new List<(int, int)> { (cell.Item1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2), (cell.Item1 + 1, cell.Item2 + 1), (cell.Item1, cell.Item2 + 1) };
+                return adjCells = new List<(int, int)> { (cell.Item1 - 1, cell.Item2), (cell.Item1 - 1, cell.Item2 + 1), (cell.Item1, cell.Item2 + 1), (cell.Item1 + 1, cell.Item2 + 1), (cell.Item1 + 1, cell.Item2) };
             }
             else if (cell.Item1 == 0 && (cell.Item2 >= 1 && cell.Item2 <= 3)) //TOP INNER WALL CELLS
             {
-                return adjCells = new List<(int, int)> { (cell.Item1 - 1, cell.Item2), (cell.Item1 - 1, cell.Item2 + 1), (cell.Item1, cell.Item2 + 1), (cell.Item1 + 1, cell.Item2 + 1), (cell.Item1 + 1, cell.Item2) };
+                return adjCells = new List<(int, int)> { (cell.Item1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2), (cell.Item1 + 1, cell.Item2 + 1), (cell.Item1, cell.Item2 + 1) };
             }
             else if ((cell.Item1 >= 1 && cell.Item1 <= 3) && cell.Item2 == 4) //RIGHT INNER WALL CELLS
             {
-                return adjCells = new List<(int, int)> { (cell.Item1, cell.Item2 - 1), (cell.Item1 - 1, cell.Item2 - 1), (cell.Item1 - 1, cell.Item2), (cell.Item1 - 1, cell.Item2 + 1), (cell.Item1, cell.Item2 + 1) };
+                return adjCells = new List<(int, int)> { (cell.Item1 + 1, cell.Item2), (cell.Item1 + 1, cell.Item2 - 1), (cell.Item1, cell.Item2 - 1), (cell.Item1 - 1, cell.Item2 - 1), (cell.Item1 - 1, cell.Item2) };
             }
             else if (cell.Item1 == 4 && (cell.Item2 >= 1 && cell.Item2 <= 3)) //BOTTOM INNER WALL CELLS
             {
-                return adjCells = new List<(int, int)> { (cell.Item1 - 1, cell.Item2), (cell.Item1 - 1, cell.Item2 - 1), (cell.Item1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2 - 1), (cell.Item1 + 1, cell.Item2) };
+                return adjCells = new List<(int, int)> { (cell.Item1, cell.Item2 - 1), (cell.Item1 - 1, cell.Item2 - 1), (cell.Item1 - 1, cell.Item2), (cell.Item1 - 1, cell.Item2 + 1), (cell.Item1, cell.Item2 + 1) };
             }
             return adjCells;
         }
@@ -198,7 +255,6 @@ namespace TermProj
             {
                 if (matrix[location.Item1, location.Item2].Text == num.ToString())
                 {
-                    prevNum = num;
                     return true;
                 }
                 //Console.WriteLine("{0} and {1}", location.Item1, location.Item2);
@@ -213,160 +269,160 @@ namespace TermProj
                 case 1:
                     matrix[0, 0].ForeColor = Color.Red;
                     matrix[0, 0].ReadOnly = true;
-                    matrix[0, 0].TextChanged -= Check;
+                    matrix[0, 0].Leave -= Check;
                     matrix[0, 0].Text = "1";
                     break;
                 case 2:
                     matrix[0, 1].ForeColor = Color.Red;
                     matrix[0, 1].ReadOnly = true;
-                    matrix[0, 1].TextChanged -= Check;
+                    matrix[0, 1].Leave -= Check;
                     matrix[0, 1].Text = "1";
                     break;
                 case 3:
                     matrix[0, 2].ForeColor = Color.Red;
                     matrix[0, 2].ReadOnly = true;
-                    matrix[0, 2].TextChanged -= Check;
+                    matrix[0, 2].Leave -= Check;
                     matrix[0, 2].Text = "1";
                     break;
                 case 4:
                     matrix[0, 3].ForeColor = Color.Red;
                     matrix[0, 3].ReadOnly = true;
-                    matrix[0, 3].TextChanged -= Check;
+                    matrix[0, 3].Leave -= Check;
                     matrix[0, 3].Text = "1";
                     break;
                 case 5:
                     matrix[0, 4].ForeColor = Color.Red;
                     matrix[0, 4].ReadOnly = true;
-                    matrix[0, 4].TextChanged -= Check;
+                    matrix[0, 4].Leave -= Check;
                     matrix[0, 4].Text = "1";
                     break;
                 case 6:
                     matrix[1, 0].ForeColor = Color.Red;
                     matrix[1, 0].ReadOnly = true;
-                    matrix[1, 0].TextChanged -= Check;
+                    matrix[1, 0].Leave -= Check;
                     matrix[1, 0].Text = "1";
                     break;
                 case 7:
                     matrix[1, 1].ForeColor = Color.Red;
                     matrix[1, 1].ReadOnly = true;
-                    matrix[1, 1].TextChanged -= Check;
+                    matrix[1, 1].Leave -= Check;
                     matrix[1, 1].Text = "1";
                     break;
                 case 8:
                     matrix[1, 2].ForeColor = Color.Red;
                     matrix[1, 2].ReadOnly = true;
-                    matrix[1, 2].TextChanged -= Check;
+                    matrix[1, 2].Leave -= Check;
                     matrix[1, 2].Text = "1";
                     break;
                 case 9:
                     matrix[1, 3].ForeColor = Color.Red;
                     matrix[1, 3].ReadOnly = true;
-                    matrix[1, 3].TextChanged -= Check;
+                    matrix[1, 3].Leave -= Check;
                     matrix[1, 3].Text = "1";
                     break;
                 case 10:
                     matrix[1, 4].ForeColor = Color.Red;
                     matrix[1, 4].ReadOnly = true;
-                    matrix[1, 4].TextChanged -= Check;
+                    matrix[1, 4].Leave -= Check;
                     matrix[1, 4].Text = "1";
                     break;
                 case 11:
                     matrix[2, 0].ForeColor = Color.Red;
                     matrix[2, 0].ReadOnly = true;
-                    matrix[2, 0].TextChanged -= Check;
+                    matrix[2, 0].Leave -= Check;
                     matrix[2, 0].Text = "1";
                     break;
                 case 12:
                     matrix[2, 1].ForeColor = Color.Red;
                     matrix[2, 1].ReadOnly = true;
-                    matrix[2, 1].TextChanged -= Check;
+                    matrix[2, 1].Leave -= Check;
                     matrix[2, 1].Text = "1";
                     break;
                 case 13:
                     matrix[2, 2].ForeColor = Color.Red;
                     matrix[2, 2].ReadOnly = true;
-                    matrix[2, 2].TextChanged -= Check;
+                    matrix[2, 2].Leave -= Check;
                     matrix[2, 2].Text = "1";
                     break;
                 case 14:
                     matrix[2, 3].ForeColor = Color.Red;
                     matrix[2, 3].ReadOnly = true;
-                    matrix[2, 3].TextChanged -= Check;
+                    matrix[2, 3].Leave -= Check;
                     matrix[2, 3].Text = "1";
                     break;
                 case 15:
                     matrix[2, 4].ForeColor = Color.Red;
                     matrix[2, 4].ReadOnly = true;
-                    matrix[2, 4].TextChanged -= Check;
+                    matrix[2, 4].Leave -= Check;
                     matrix[2, 4].Text = "1";
                     break;
                 case 16:
                     matrix[3, 0].ForeColor = Color.Red;
                     matrix[3, 0].ReadOnly = true;
-                    matrix[3, 0].TextChanged -= Check;
+                    matrix[3, 0].Leave -= Check;
                     matrix[3, 0].Text = "1";
                     break;
                 case 17:
                     matrix[3, 1].ForeColor = Color.Red;
                     matrix[3, 1].ReadOnly = true;
-                    matrix[3, 1].TextChanged -= Check;
+                    matrix[3, 1].Leave -= Check;
                     matrix[3, 1].Text = "1";
                     break;
                 case 18:
                     matrix[3, 2].ForeColor = Color.Red;
                     matrix[3, 2].ReadOnly = true;
-                    matrix[3, 2].TextChanged -= Check;
+                    matrix[3, 2].Leave -= Check;
                     matrix[3, 2].Text = "1";
                     break;
                 case 19:
                     matrix[3, 3].ForeColor = Color.Red;
                     matrix[3, 3].ReadOnly = true;
-                    matrix[3, 3].TextChanged -= Check;
+                    matrix[3, 3].Leave -= Check;
                     matrix[3, 3].Text = "1";
                     break;
                 case 20:
                     matrix[3, 4].ForeColor = Color.Red;
                     matrix[3, 4].ReadOnly = true;
-                    matrix[3, 4].TextChanged -= Check;
+                    matrix[3, 4].Leave -= Check;
                     matrix[3, 4].Text = "1";
                     break;
                 case 21:
                     matrix[4, 0].ForeColor = Color.Red;
                     matrix[4, 0].ReadOnly = true;
-                    matrix[4, 0].TextChanged -= Check;
+                    matrix[4, 0].Leave -= Check;
                     matrix[4, 0].Text = "1";
                     break;
                 case 22:
                     matrix[4, 1].ForeColor = Color.Red;
                     matrix[4, 1].ReadOnly = true;
-                    matrix[4, 1].TextChanged -= Check;
+                    matrix[4, 1].Leave -= Check;
                     matrix[4, 1].Text = "1";
                     break;
                 case 23:
                     matrix[4, 2].ForeColor = Color.Red;
                     matrix[4, 2].ReadOnly = true;
-                    matrix[4, 2].TextChanged -= Check;
+                    matrix[4, 2].Leave -= Check;
                     matrix[4, 2].Text = "1";
                     break;
                 case 24:
                     matrix[4, 3].ForeColor = Color.Red;
                     matrix[4, 3].ReadOnly = true;
-                    matrix[4, 3].TextChanged -= Check;
+                    matrix[4, 3].Leave -= Check;
                     matrix[4, 3].Text = "1";
                     break;
                 case 25:
                     matrix[4, 4].ForeColor = Color.Red;
                     matrix[4, 4].ReadOnly = true;
-                    matrix[4, 4].TextChanged -= Check;
+                    matrix[4, 4].Leave -= Check;
                     matrix[4, 4].Text = "1";
                     break;
-                //default:
-                //    matrix[0, 0].ForeColor = Color.Red;
-                //    matrix[0, 0].ReadOnly = true;
-                //    matrix[0, 0].TextChanged -= Check;
-                //    matrix[0, 0].Text = "1";
-                //    //r1Location = (0, 0);
-                //    break;
+                    //default:
+                    //    matrix[0, 1].ForeColor = Color.Red;
+                    //    matrix[0, 1].ReadOnly = true;
+                    //    matrix[0, 1].TextChanged -= Check;
+                    //    matrix[0, 1].Text = "1";
+                    //    //r1Location = (0, 0);
+                    //    break;
             }
             matrixNums.Add(1);
         }

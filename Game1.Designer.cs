@@ -93,7 +93,8 @@ namespace TermProj
             this.txtBox44.TabIndex = 60;
             this.txtBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox44.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox44.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox44.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox44.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox43
             // 
@@ -106,7 +107,8 @@ namespace TermProj
             this.txtBox43.TabIndex = 59;
             this.txtBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox43.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox43.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox43.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox43.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox42
             // 
@@ -119,7 +121,8 @@ namespace TermProj
             this.txtBox42.TabIndex = 58;
             this.txtBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox42.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox42.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox42.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox42.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox41
             // 
@@ -132,7 +135,8 @@ namespace TermProj
             this.txtBox41.TabIndex = 57;
             this.txtBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox41.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox41.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox41.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox41.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox40
             // 
@@ -145,7 +149,8 @@ namespace TermProj
             this.txtBox40.TabIndex = 56;
             this.txtBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox40.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox40.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox40.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox40.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox34
             // 
@@ -158,7 +163,8 @@ namespace TermProj
             this.txtBox34.TabIndex = 55;
             this.txtBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox34.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox34.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox34.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox34.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox33
             // 
@@ -171,7 +177,8 @@ namespace TermProj
             this.txtBox33.TabIndex = 54;
             this.txtBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox33.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox33.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox33.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox33.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox32
             // 
@@ -184,7 +191,8 @@ namespace TermProj
             this.txtBox32.TabIndex = 53;
             this.txtBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox32.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox32.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox32.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox32.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox31
             // 
@@ -197,7 +205,8 @@ namespace TermProj
             this.txtBox31.TabIndex = 52;
             this.txtBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox31.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox31.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox31.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox31.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox30
             // 
@@ -210,7 +219,8 @@ namespace TermProj
             this.txtBox30.TabIndex = 51;
             this.txtBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox30.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox30.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox30.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox30.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox24
             // 
@@ -223,7 +233,8 @@ namespace TermProj
             this.txtBox24.TabIndex = 50;
             this.txtBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox24.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox24.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox24.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox24.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox23
             // 
@@ -236,7 +247,8 @@ namespace TermProj
             this.txtBox23.TabIndex = 49;
             this.txtBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox23.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox23.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox23.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox23.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox22
             // 
@@ -249,7 +261,8 @@ namespace TermProj
             this.txtBox22.TabIndex = 48;
             this.txtBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox22.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox22.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox22.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox22.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox21
             // 
@@ -262,7 +275,8 @@ namespace TermProj
             this.txtBox21.TabIndex = 47;
             this.txtBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox21.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox21.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox21.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox21.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox20
             // 
@@ -275,7 +289,8 @@ namespace TermProj
             this.txtBox20.TabIndex = 46;
             this.txtBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox20.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox20.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox20.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox20.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox14
             // 
@@ -288,7 +303,8 @@ namespace TermProj
             this.txtBox14.TabIndex = 45;
             this.txtBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox14.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox14.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox14.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox14.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox13
             // 
@@ -301,7 +317,8 @@ namespace TermProj
             this.txtBox13.TabIndex = 44;
             this.txtBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox13.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox13.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox13.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox13.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox12
             // 
@@ -314,7 +331,8 @@ namespace TermProj
             this.txtBox12.TabIndex = 43;
             this.txtBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox12.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox12.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox12.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox12.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox11
             // 
@@ -327,7 +345,8 @@ namespace TermProj
             this.txtBox11.TabIndex = 42;
             this.txtBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox11.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox11.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox11.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox11.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox10
             // 
@@ -340,7 +359,8 @@ namespace TermProj
             this.txtBox10.TabIndex = 41;
             this.txtBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox10.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox10.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox10.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox10.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox04
             // 
@@ -353,7 +373,8 @@ namespace TermProj
             this.txtBox04.TabIndex = 40;
             this.txtBox04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox04.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox04.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox04.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox04.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox03
             // 
@@ -366,7 +387,8 @@ namespace TermProj
             this.txtBox03.TabIndex = 39;
             this.txtBox03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox03.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox03.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox03.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox03.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox02
             // 
@@ -379,7 +401,8 @@ namespace TermProj
             this.txtBox02.TabIndex = 38;
             this.txtBox02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox02.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox02.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox02.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox02.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox01
             // 
@@ -392,7 +415,8 @@ namespace TermProj
             this.txtBox01.TabIndex = 37;
             this.txtBox01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox01.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox01.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox01.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox01.Leave += new System.EventHandler(this.Check);
             // 
             // txtBox00
             // 
@@ -405,7 +429,8 @@ namespace TermProj
             this.txtBox00.TabIndex = 36;
             this.txtBox00.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox00.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
-            this.txtBox00.TextChanged += new System.EventHandler(this.Check);
+            this.txtBox00.DoubleClick += new System.EventHandler(this.Clear);
+            this.txtBox00.Leave += new System.EventHandler(this.Check);
             // 
             // menuStrip1
             // 

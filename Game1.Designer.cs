@@ -58,7 +58,6 @@ namespace TermProj
             this.txtBox00 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abortGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameSolutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -447,7 +446,6 @@ namespace TermProj
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newGameToolStripMenuItem,
             this.pauseGameToolStripMenuItem,
             this.abortGameToolStripMenuItem,
             this.gameSolutionToolStripMenuItem,
@@ -456,35 +454,31 @@ namespace TermProj
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
-            // newGameToolStripMenuItem
-            // 
-            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newGameToolStripMenuItem.Text = "New Game";
-            // 
             // pauseGameToolStripMenuItem
             // 
             this.pauseGameToolStripMenuItem.Name = "pauseGameToolStripMenuItem";
-            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pauseGameToolStripMenuItem.Text = "Pause Game";
             this.pauseGameToolStripMenuItem.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // abortGameToolStripMenuItem
             // 
             this.abortGameToolStripMenuItem.Name = "abortGameToolStripMenuItem";
-            this.abortGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.abortGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.abortGameToolStripMenuItem.Text = "Abort Game";
+            this.abortGameToolStripMenuItem.Click += new System.EventHandler(this.abortGameToolStripMenuItem_Click);
             // 
             // gameSolutionToolStripMenuItem
             // 
             this.gameSolutionToolStripMenuItem.Name = "gameSolutionToolStripMenuItem";
-            this.gameSolutionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gameSolutionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gameSolutionToolStripMenuItem.Text = "Game Solution";
+            this.gameSolutionToolStripMenuItem.Click += new System.EventHandler(this.gameSolutionToolStripMenuItem_Click);
             // 
             // gameHistoryToolStripMenuItem
             // 
             this.gameHistoryToolStripMenuItem.Name = "gameHistoryToolStripMenuItem";
-            this.gameHistoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gameHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gameHistoryToolStripMenuItem.Text = "Game History";
             // 
             // quitToolStripMenuItem
@@ -605,7 +599,6 @@ namespace TermProj
         private System.Windows.Forms.TextBox txtBox00;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pauseGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abortGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gameSolutionToolStripMenuItem;

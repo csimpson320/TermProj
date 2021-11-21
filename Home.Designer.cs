@@ -34,7 +34,6 @@ namespace TermProj
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.game1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.game2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.game3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,8 +69,7 @@ namespace TermProj
             // 
             this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.game1ToolStripMenuItem,
-            this.game2ToolStripMenuItem,
-            this.game3ToolStripMenuItem});
+            this.game2ToolStripMenuItem});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.newToolStripMenuItem.Text = "New";
@@ -79,21 +77,16 @@ namespace TermProj
             // game1ToolStripMenuItem
             // 
             this.game1ToolStripMenuItem.Name = "game1ToolStripMenuItem";
-            this.game1ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.game1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.game1ToolStripMenuItem.Text = "Game 1";
             this.game1ToolStripMenuItem.Click += new System.EventHandler(this.game1ToolStripMenuItem_Click);
             // 
             // game2ToolStripMenuItem
             // 
             this.game2ToolStripMenuItem.Name = "game2ToolStripMenuItem";
-            this.game2ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.game2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.game2ToolStripMenuItem.Text = "Game 2";
-            // 
-            // game3ToolStripMenuItem
-            // 
-            this.game3ToolStripMenuItem.Name = "game3ToolStripMenuItem";
-            this.game3ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.game3ToolStripMenuItem.Text = "Game 3";
+            this.game2ToolStripMenuItem.Click += new System.EventHandler(this.game2ToolStripMenuItem_Click);
             // 
             // historyToolStripMenuItem
             // 
@@ -163,7 +156,6 @@ namespace TermProj
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem game1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem game2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem game3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;

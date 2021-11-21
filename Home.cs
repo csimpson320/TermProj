@@ -43,5 +43,11 @@ namespace TermProj
             fmr_g1 = new Game1();
             fmr_g1.ShowDialog();
         }
+
+        private void game2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmr_g2 = new Game2();
+            fmr_g2.ShowDialog();
+        }
     }
 }

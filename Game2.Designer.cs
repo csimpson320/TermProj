@@ -29,6 +29,7 @@ namespace TermProj
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labTimer = new System.Windows.Forms.Label();
             this.txtBox44 = new System.Windows.Forms.TextBox();
             this.txtBox43 = new System.Windows.Forms.TextBox();
@@ -57,10 +58,8 @@ namespace TermProj
             this.txtBox00 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abortGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gameSolutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,6 +89,8 @@ namespace TermProj
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox24 = new System.Windows.Forms.TextBox();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.g2_Time = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -393,44 +394,33 @@ namespace TermProj
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newGameToolStripMenuItem,
             this.pauseGameToolStripMenuItem,
             this.abortGameToolStripMenuItem,
-            this.gameSolutionToolStripMenuItem,
             this.gameHistoryToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
-            // 
-            // newGameToolStripMenuItem
-            // 
-            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.newGameToolStripMenuItem.Text = "New Game";
             // 
             // pauseGameToolStripMenuItem
             // 
             this.pauseGameToolStripMenuItem.Name = "pauseGameToolStripMenuItem";
             this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pauseGameToolStripMenuItem.Text = "Pause Game";
+            this.pauseGameToolStripMenuItem.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // abortGameToolStripMenuItem
             // 
             this.abortGameToolStripMenuItem.Name = "abortGameToolStripMenuItem";
             this.abortGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.abortGameToolStripMenuItem.Text = "Abort Game";
-            // 
-            // gameSolutionToolStripMenuItem
-            // 
-            this.gameSolutionToolStripMenuItem.Name = "gameSolutionToolStripMenuItem";
-            this.gameSolutionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gameSolutionToolStripMenuItem.Text = "Game Solution";
+            this.abortGameToolStripMenuItem.Click += new System.EventHandler(this.abortGameToolStripMenuItem_Click);
             // 
             // gameHistoryToolStripMenuItem
             // 
             this.gameHistoryToolStripMenuItem.Name = "gameHistoryToolStripMenuItem";
             this.gameHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gameHistoryToolStripMenuItem.Text = "Game History";
+            this.gameHistoryToolStripMenuItem.Click += new System.EventHandler(this.gameHistoryToolStripMenuItem_Click);
             // 
             // quitToolStripMenuItem
             // 
@@ -446,18 +436,21 @@ namespace TermProj
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gameToolStripMenuItem.Text = "Game";
+            this.gameToolStripMenuItem.Click += new System.EventHandler(this.gameToolStripMenuItem_Click);
             // 
             // applicationToolStripMenuItem
             // 
             this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
             this.applicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.applicationToolStripMenuItem.Text = "Application";
+            this.applicationToolStripMenuItem.Click += new System.EventHandler(this.applicationToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // textBox1
             // 
@@ -482,7 +475,6 @@ namespace TermProj
             this.textBox2.Size = new System.Drawing.Size(43, 26);
             this.textBox2.TabIndex = 90;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -495,7 +487,6 @@ namespace TermProj
             this.textBox3.Size = new System.Drawing.Size(43, 26);
             this.textBox3.TabIndex = 91;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
@@ -508,7 +499,6 @@ namespace TermProj
             this.textBox4.Size = new System.Drawing.Size(43, 26);
             this.textBox4.TabIndex = 92;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox5
             // 
@@ -750,11 +740,27 @@ namespace TermProj
             this.textBox24.TabIndex = 112;
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // gameTimer
+            // 
+            this.gameTimer.Interval = 1000;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+            // 
+            // g2_Time
+            // 
+            this.g2_Time.AutoSize = true;
+            this.g2_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.g2_Time.Location = new System.Drawing.Point(190, 296);
+            this.g2_Time.Name = "g2_Time";
+            this.g2_Time.Size = new System.Drawing.Size(0, 20);
+            this.g2_Time.TabIndex = 113;
+            // 
             // Game2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 345);
+            this.ControlBox = false;
+            this.Controls.Add(this.g2_Time);
             this.Controls.Add(this.textBox24);
             this.Controls.Add(this.textBox23);
             this.Controls.Add(this.textBox22);
@@ -807,8 +813,8 @@ namespace TermProj
             this.Controls.Add(this.txtBox01);
             this.Controls.Add(this.txtBox00);
             this.Name = "Game2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game2";
-            this.Load += new System.EventHandler(this.Game2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -846,10 +852,8 @@ namespace TermProj
         private System.Windows.Forms.TextBox txtBox00;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pauseGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abortGameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gameSolutionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gameHistoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
@@ -879,5 +883,7 @@ namespace TermProj
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Label g2_Time;
     }
 }

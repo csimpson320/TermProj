@@ -117,4 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>In the above 5x5 grid or matrix, twenty five integers, from 1 to 25, are filled in all cells to satisfy the rules below:
+
+- No duplicates.
+- No holes (empty cells), i.e., no any integer is skipped or left unused.
+- Cells are single-valued, i.e., no second integer is allowed in each cell.
+- Integer 1 can begin in any randomly selected cell.
+- Starting from 2, integers are filled in the order of 2 to 25.
+- Every integer, except 1, must be placed in one of the empty cells surrounding its predecessor. Possible such cells include the predecessor's left, right, top, bottom, plus four corner cells. For instance, in the above example grid, when integer 1 is filled, it has 8 surrounding empty cells to select for next integer, 2. After 2 is filled in the upper-left cell of its predecessor 1, there are only 4 surrounding empty cells for integer 3. If integers are filled by following the above rules, the possible numbers of surrounding empty cells for any integer from 1 to 24 of this game should be in the range between 1 and 8, and zero for the ending integer 25.</value>
+  </data>
+  <data name="richTextBox2.Text" xml:space="preserve">
+    <value>Different from Game 1, there are additional 24 empty edge cells displayed on each edge, including four corners of the center grid. For easy illustration, these edge cells are shown in blue and yellow in the above figure and already filled with a number. The goal of this game is similar to that of Game 1, user is going to fill all empty edge cells with integers from 2 to 24 using the following rules.
+
+- Like Game 1, each edge cell can be filled with only one integer between 2 and 24 with no duplicates and no skipping.
+- For the ten top and bottom edge cells of the grid, they can only be filled in a number that appears in the corresponding columns. For example, 23 is filled in a top edge cell because 23 appears on the second column of the grid from the left. A similar rule then applies to the ten right and left side edge cells of the grid.
+- To fill an integer in one of the four (yellow) corner edge cells, the number must exist on the corresponding longest diagonal of the grid. For example, 9 and 20 are filled in the upper-right and lower-left corner edge cells because they are on the northeast-to-southwest diagonal of the grid.
+- Different from the filling rule of Game 1, the 24 integers are not necessarily filled in the edge cells in any particular order as long as they are all used to win the game. However, it will be easier (for the player or your program development) to simply fill them in ascending (2...24) or descending (24...2) order.
+- Very similar to Game 1 about how a game could fail here. Either the numbers are filled in certain order or not, the game fails when one or more numbers can not get a cell to fill in. See the figure below for an example. Here numbers 2 ~ 22 are successfully get their places in the edge cells of the grid but 23 (and 24) apparently find no vacancy on its top, bottom, left, and right edge cells, and even 23 is one the northeast-to-southwest diagonal line, the two edge cells are already occupied by 9 and 20. In this case even 25 can still fill in the bottom cell, it doesn't help to win the game.</value>
+  </data>
 </root>

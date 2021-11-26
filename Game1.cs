@@ -136,6 +136,14 @@ namespace TermProj
                             {
                                 this.Close();
                             }
+                            if (result == DialogResult.Yes)
+                            {
+                                Game2 game = new Game2();
+                                game.TopLevel = true;
+                                game.Parent = this.Parent;
+                                game.ShowDialog();
+                                this.Close();
+                            }
                         }
                     }
                 }
@@ -271,7 +279,7 @@ namespace TermProj
                     if (matrix[row, col].Text == "1")
                         break;
                     else
-                        matrix[row, col].Clear();
+                        matrix[row, col].Text = "";
                 }
 
             for (int i = 25; i > 1; i--)
@@ -323,8 +331,26 @@ namespace TermProj
                     Console.WriteLine(prevNum.ToString() + "  | else BOTTOM");
                 }
             }
+
             if (matrixNums.Count() == 25)
+            {
                 gameTimer.Stop();
+                var result = MessageBox.Show("The game solution has been provided.\n" +
+                    "Would you like to start Game 2?",
+                    "Game Over!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                {
+                    this.Close();
+                }
+                if (result == DialogResult.Yes)
+                {
+                    Game2 game = new Game2();
+                    game.TopLevel = true;
+                    game.Parent = this.Parent;
+                    game.ShowDialog();
+                    this.Close();
+                }
+            }
         }
 
         private void PlaceRandom(int r)

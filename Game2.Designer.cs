@@ -111,6 +111,7 @@ namespace TermProj
             this.txtBox44.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox44.Location = new System.Drawing.Point(292, 214);
             this.txtBox44.Name = "txtBox44";
+            this.txtBox44.ReadOnly = true;
             this.txtBox44.Size = new System.Drawing.Size(43, 26);
             this.txtBox44.TabIndex = 86;
             this.txtBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -122,6 +123,7 @@ namespace TermProj
             this.txtBox43.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox43.Location = new System.Drawing.Point(243, 214);
             this.txtBox43.Name = "txtBox43";
+            this.txtBox43.ReadOnly = true;
             this.txtBox43.Size = new System.Drawing.Size(43, 26);
             this.txtBox43.TabIndex = 85;
             this.txtBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -133,6 +135,7 @@ namespace TermProj
             this.txtBox42.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox42.Location = new System.Drawing.Point(194, 214);
             this.txtBox42.Name = "txtBox42";
+            this.txtBox42.ReadOnly = true;
             this.txtBox42.Size = new System.Drawing.Size(43, 26);
             this.txtBox42.TabIndex = 84;
             this.txtBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -144,6 +147,7 @@ namespace TermProj
             this.txtBox41.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox41.Location = new System.Drawing.Point(145, 214);
             this.txtBox41.Name = "txtBox41";
+            this.txtBox41.ReadOnly = true;
             this.txtBox41.Size = new System.Drawing.Size(43, 26);
             this.txtBox41.TabIndex = 83;
             this.txtBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -155,6 +159,7 @@ namespace TermProj
             this.txtBox40.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox40.Location = new System.Drawing.Point(96, 214);
             this.txtBox40.Name = "txtBox40";
+            this.txtBox40.ReadOnly = true;
             this.txtBox40.Size = new System.Drawing.Size(43, 26);
             this.txtBox40.TabIndex = 82;
             this.txtBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -166,6 +171,7 @@ namespace TermProj
             this.txtBox34.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox34.Location = new System.Drawing.Point(292, 182);
             this.txtBox34.Name = "txtBox34";
+            this.txtBox34.ReadOnly = true;
             this.txtBox34.Size = new System.Drawing.Size(43, 26);
             this.txtBox34.TabIndex = 81;
             this.txtBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -177,6 +183,7 @@ namespace TermProj
             this.txtBox33.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox33.Location = new System.Drawing.Point(243, 182);
             this.txtBox33.Name = "txtBox33";
+            this.txtBox33.ReadOnly = true;
             this.txtBox33.Size = new System.Drawing.Size(43, 26);
             this.txtBox33.TabIndex = 80;
             this.txtBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -188,6 +195,7 @@ namespace TermProj
             this.txtBox32.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox32.Location = new System.Drawing.Point(194, 182);
             this.txtBox32.Name = "txtBox32";
+            this.txtBox32.ReadOnly = true;
             this.txtBox32.Size = new System.Drawing.Size(43, 26);
             this.txtBox32.TabIndex = 79;
             this.txtBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -199,6 +207,7 @@ namespace TermProj
             this.txtBox31.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox31.Location = new System.Drawing.Point(145, 182);
             this.txtBox31.Name = "txtBox31";
+            this.txtBox31.ReadOnly = true;
             this.txtBox31.Size = new System.Drawing.Size(43, 26);
             this.txtBox31.TabIndex = 78;
             this.txtBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -210,6 +219,7 @@ namespace TermProj
             this.txtBox30.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox30.Location = new System.Drawing.Point(96, 182);
             this.txtBox30.Name = "txtBox30";
+            this.txtBox30.ReadOnly = true;
             this.txtBox30.Size = new System.Drawing.Size(43, 26);
             this.txtBox30.TabIndex = 77;
             this.txtBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -221,6 +231,7 @@ namespace TermProj
             this.txtBox24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox24.Location = new System.Drawing.Point(292, 150);
             this.txtBox24.Name = "txtBox24";
+            this.txtBox24.ReadOnly = true;
             this.txtBox24.Size = new System.Drawing.Size(43, 26);
             this.txtBox24.TabIndex = 76;
             this.txtBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -232,6 +243,7 @@ namespace TermProj
             this.txtBox23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox23.Location = new System.Drawing.Point(243, 150);
             this.txtBox23.Name = "txtBox23";
+            this.txtBox23.ReadOnly = true;
             this.txtBox23.Size = new System.Drawing.Size(43, 26);
             this.txtBox23.TabIndex = 75;
             this.txtBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -243,6 +255,7 @@ namespace TermProj
             this.txtBox22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox22.Location = new System.Drawing.Point(194, 150);
             this.txtBox22.Name = "txtBox22";
+            this.txtBox22.ReadOnly = true;
             this.txtBox22.Size = new System.Drawing.Size(43, 26);
             this.txtBox22.TabIndex = 74;
             this.txtBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -254,6 +267,7 @@ namespace TermProj
             this.txtBox21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox21.Location = new System.Drawing.Point(145, 150);
             this.txtBox21.Name = "txtBox21";
+            this.txtBox21.ReadOnly = true;
             this.txtBox21.Size = new System.Drawing.Size(43, 26);
             this.txtBox21.TabIndex = 73;
             this.txtBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -265,6 +279,7 @@ namespace TermProj
             this.txtBox20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox20.Location = new System.Drawing.Point(96, 150);
             this.txtBox20.Name = "txtBox20";
+            this.txtBox20.ReadOnly = true;
             this.txtBox20.Size = new System.Drawing.Size(43, 26);
             this.txtBox20.TabIndex = 72;
             this.txtBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -276,6 +291,7 @@ namespace TermProj
             this.txtBox14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox14.Location = new System.Drawing.Point(292, 118);
             this.txtBox14.Name = "txtBox14";
+            this.txtBox14.ReadOnly = true;
             this.txtBox14.Size = new System.Drawing.Size(43, 26);
             this.txtBox14.TabIndex = 71;
             this.txtBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -287,6 +303,7 @@ namespace TermProj
             this.txtBox13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox13.Location = new System.Drawing.Point(243, 118);
             this.txtBox13.Name = "txtBox13";
+            this.txtBox13.ReadOnly = true;
             this.txtBox13.Size = new System.Drawing.Size(43, 26);
             this.txtBox13.TabIndex = 70;
             this.txtBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -298,6 +315,7 @@ namespace TermProj
             this.txtBox12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox12.Location = new System.Drawing.Point(194, 118);
             this.txtBox12.Name = "txtBox12";
+            this.txtBox12.ReadOnly = true;
             this.txtBox12.Size = new System.Drawing.Size(43, 26);
             this.txtBox12.TabIndex = 69;
             this.txtBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -309,6 +327,7 @@ namespace TermProj
             this.txtBox11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox11.Location = new System.Drawing.Point(145, 118);
             this.txtBox11.Name = "txtBox11";
+            this.txtBox11.ReadOnly = true;
             this.txtBox11.Size = new System.Drawing.Size(43, 26);
             this.txtBox11.TabIndex = 68;
             this.txtBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -320,6 +339,7 @@ namespace TermProj
             this.txtBox10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox10.Location = new System.Drawing.Point(96, 118);
             this.txtBox10.Name = "txtBox10";
+            this.txtBox10.ReadOnly = true;
             this.txtBox10.Size = new System.Drawing.Size(43, 26);
             this.txtBox10.TabIndex = 67;
             this.txtBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -331,6 +351,7 @@ namespace TermProj
             this.txtBox04.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox04.Location = new System.Drawing.Point(292, 86);
             this.txtBox04.Name = "txtBox04";
+            this.txtBox04.ReadOnly = true;
             this.txtBox04.Size = new System.Drawing.Size(43, 26);
             this.txtBox04.TabIndex = 66;
             this.txtBox04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -342,6 +363,7 @@ namespace TermProj
             this.txtBox03.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox03.Location = new System.Drawing.Point(243, 86);
             this.txtBox03.Name = "txtBox03";
+            this.txtBox03.ReadOnly = true;
             this.txtBox03.Size = new System.Drawing.Size(43, 26);
             this.txtBox03.TabIndex = 65;
             this.txtBox03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -353,6 +375,7 @@ namespace TermProj
             this.txtBox02.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox02.Location = new System.Drawing.Point(194, 86);
             this.txtBox02.Name = "txtBox02";
+            this.txtBox02.ReadOnly = true;
             this.txtBox02.Size = new System.Drawing.Size(43, 26);
             this.txtBox02.TabIndex = 64;
             this.txtBox02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -364,6 +387,7 @@ namespace TermProj
             this.txtBox01.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox01.Location = new System.Drawing.Point(145, 86);
             this.txtBox01.Name = "txtBox01";
+            this.txtBox01.ReadOnly = true;
             this.txtBox01.Size = new System.Drawing.Size(43, 26);
             this.txtBox01.TabIndex = 63;
             this.txtBox01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -375,6 +399,7 @@ namespace TermProj
             this.txtBox00.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtBox00.Location = new System.Drawing.Point(96, 86);
             this.txtBox00.Name = "txtBox00";
+            this.txtBox00.ReadOnly = true;
             this.txtBox00.Size = new System.Drawing.Size(43, 26);
             this.txtBox00.TabIndex = 62;
             this.txtBox00.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -404,21 +429,21 @@ namespace TermProj
             // pauseGameToolStripMenuItem
             // 
             this.pauseGameToolStripMenuItem.Name = "pauseGameToolStripMenuItem";
-            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pauseGameToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.pauseGameToolStripMenuItem.Text = "Pause Game";
             this.pauseGameToolStripMenuItem.Click += new System.EventHandler(this.pauseGameToolStripMenuItem_Click);
             // 
             // abortGameToolStripMenuItem
             // 
             this.abortGameToolStripMenuItem.Name = "abortGameToolStripMenuItem";
-            this.abortGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abortGameToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.abortGameToolStripMenuItem.Text = "Abort Game";
             this.abortGameToolStripMenuItem.Click += new System.EventHandler(this.abortGameToolStripMenuItem_Click);
             // 
             // gameHistoryToolStripMenuItem
             // 
             this.gameHistoryToolStripMenuItem.Name = "gameHistoryToolStripMenuItem";
-            this.gameHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gameHistoryToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.gameHistoryToolStripMenuItem.Text = "Game History";
             this.gameHistoryToolStripMenuItem.Click += new System.EventHandler(this.gameHistoryToolStripMenuItem_Click);
             // 
@@ -434,14 +459,14 @@ namespace TermProj
             // gameToolStripMenuItem
             // 
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            this.gameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.gameToolStripMenuItem.Text = "Game";
             this.gameToolStripMenuItem.Click += new System.EventHandler(this.gameToolStripMenuItem_Click);
             // 
             // applicationToolStripMenuItem
             // 
             this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
-            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.applicationToolStripMenuItem.Text = "Application";
             this.applicationToolStripMenuItem.Click += new System.EventHandler(this.applicationToolStripMenuItem_Click);
             // 

@@ -65,30 +65,30 @@ namespace TermProj
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.CTL = new System.Windows.Forms.TextBox();
+            this.CBR = new System.Windows.Forms.TextBox();
+            this.CTR = new System.Windows.Forms.TextBox();
+            this.CBL = new System.Windows.Forms.TextBox();
+            this.B0 = new System.Windows.Forms.TextBox();
+            this.B1 = new System.Windows.Forms.TextBox();
+            this.B2 = new System.Windows.Forms.TextBox();
+            this.B3 = new System.Windows.Forms.TextBox();
+            this.B4 = new System.Windows.Forms.TextBox();
+            this.L0 = new System.Windows.Forms.TextBox();
+            this.L1 = new System.Windows.Forms.TextBox();
+            this.L2 = new System.Windows.Forms.TextBox();
+            this.L3 = new System.Windows.Forms.TextBox();
+            this.L4 = new System.Windows.Forms.TextBox();
+            this.R4 = new System.Windows.Forms.TextBox();
+            this.R3 = new System.Windows.Forms.TextBox();
+            this.R2 = new System.Windows.Forms.TextBox();
+            this.R1 = new System.Windows.Forms.TextBox();
+            this.R0 = new System.Windows.Forms.TextBox();
+            this.T0 = new System.Windows.Forms.TextBox();
+            this.T1 = new System.Windows.Forms.TextBox();
+            this.T2 = new System.Windows.Forms.TextBox();
+            this.T3 = new System.Windows.Forms.TextBox();
+            this.T4 = new System.Windows.Forms.TextBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.g2_Time = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
@@ -477,293 +477,365 @@ namespace TermProj
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
-            // textBox1
+            // CTL
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Yellow;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.Blue;
-            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox1.Location = new System.Drawing.Point(47, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(43, 26);
-            this.textBox1.TabIndex = 89;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CTL.BackColor = System.Drawing.Color.Yellow;
+            this.CTL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.CTL.ForeColor = System.Drawing.Color.Blue;
+            this.CTL.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CTL.Location = new System.Drawing.Point(47, 54);
+            this.CTL.Name = "CTL";
+            this.CTL.Size = new System.Drawing.Size(43, 26);
+            this.CTL.TabIndex = 89;
+            this.CTL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CTL.Click += new System.EventHandler(this.startGameTimer);
+            this.CTL.DoubleClick += new System.EventHandler(this.Clear);
+            this.CTL.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox2
+            // CBR
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Yellow;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox2.ForeColor = System.Drawing.Color.Blue;
-            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox2.Location = new System.Drawing.Point(341, 246);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(43, 26);
-            this.textBox2.TabIndex = 90;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CBR.BackColor = System.Drawing.Color.Yellow;
+            this.CBR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.CBR.ForeColor = System.Drawing.Color.Blue;
+            this.CBR.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CBR.Location = new System.Drawing.Point(341, 246);
+            this.CBR.Name = "CBR";
+            this.CBR.Size = new System.Drawing.Size(43, 26);
+            this.CBR.TabIndex = 90;
+            this.CBR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CBR.Click += new System.EventHandler(this.startGameTimer);
+            this.CBR.DoubleClick += new System.EventHandler(this.Clear);
+            this.CBR.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox3
+            // CTR
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Yellow;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox3.ForeColor = System.Drawing.Color.Blue;
-            this.textBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox3.Location = new System.Drawing.Point(341, 54);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(43, 26);
-            this.textBox3.TabIndex = 91;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CTR.BackColor = System.Drawing.Color.Yellow;
+            this.CTR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.CTR.ForeColor = System.Drawing.Color.Blue;
+            this.CTR.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CTR.Location = new System.Drawing.Point(341, 54);
+            this.CTR.Name = "CTR";
+            this.CTR.Size = new System.Drawing.Size(43, 26);
+            this.CTR.TabIndex = 91;
+            this.CTR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CTR.Click += new System.EventHandler(this.startGameTimer);
+            this.CTR.DoubleClick += new System.EventHandler(this.Clear);
+            this.CTR.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox4
+            // CBL
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Yellow;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox4.ForeColor = System.Drawing.Color.Blue;
-            this.textBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox4.Location = new System.Drawing.Point(47, 246);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(43, 26);
-            this.textBox4.TabIndex = 92;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CBL.BackColor = System.Drawing.Color.Yellow;
+            this.CBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.CBL.ForeColor = System.Drawing.Color.Blue;
+            this.CBL.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CBL.Location = new System.Drawing.Point(47, 246);
+            this.CBL.Name = "CBL";
+            this.CBL.Size = new System.Drawing.Size(43, 26);
+            this.CBL.TabIndex = 92;
+            this.CBL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CBL.Click += new System.EventHandler(this.startGameTimer);
+            this.CBL.DoubleClick += new System.EventHandler(this.Clear);
+            this.CBL.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox5
+            // B0
             // 
-            this.textBox5.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox5.ForeColor = System.Drawing.Color.Blue;
-            this.textBox5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox5.Location = new System.Drawing.Point(96, 246);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(43, 26);
-            this.textBox5.TabIndex = 93;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.B0.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.B0.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.B0.ForeColor = System.Drawing.Color.Blue;
+            this.B0.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.B0.Location = new System.Drawing.Point(96, 246);
+            this.B0.Name = "B0";
+            this.B0.Size = new System.Drawing.Size(43, 26);
+            this.B0.TabIndex = 93;
+            this.B0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.B0.Click += new System.EventHandler(this.startGameTimer);
+            this.B0.DoubleClick += new System.EventHandler(this.Clear);
+            this.B0.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox6
+            // B1
             // 
-            this.textBox6.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox6.ForeColor = System.Drawing.Color.Blue;
-            this.textBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox6.Location = new System.Drawing.Point(145, 246);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(43, 26);
-            this.textBox6.TabIndex = 94;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.B1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.B1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.B1.ForeColor = System.Drawing.Color.Blue;
+            this.B1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.B1.Location = new System.Drawing.Point(145, 246);
+            this.B1.Name = "B1";
+            this.B1.Size = new System.Drawing.Size(43, 26);
+            this.B1.TabIndex = 94;
+            this.B1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.B1.Click += new System.EventHandler(this.startGameTimer);
+            this.B1.DoubleClick += new System.EventHandler(this.Clear);
+            this.B1.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox7
+            // B2
             // 
-            this.textBox7.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox7.ForeColor = System.Drawing.Color.Blue;
-            this.textBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox7.Location = new System.Drawing.Point(194, 246);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(43, 26);
-            this.textBox7.TabIndex = 95;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.B2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.B2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.B2.ForeColor = System.Drawing.Color.Blue;
+            this.B2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.B2.Location = new System.Drawing.Point(194, 246);
+            this.B2.Name = "B2";
+            this.B2.Size = new System.Drawing.Size(43, 26);
+            this.B2.TabIndex = 95;
+            this.B2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.B2.Click += new System.EventHandler(this.startGameTimer);
+            this.B2.DoubleClick += new System.EventHandler(this.Clear);
+            this.B2.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox8
+            // B3
             // 
-            this.textBox8.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox8.ForeColor = System.Drawing.Color.Blue;
-            this.textBox8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox8.Location = new System.Drawing.Point(243, 246);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(43, 26);
-            this.textBox8.TabIndex = 96;
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.B3.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.B3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.B3.ForeColor = System.Drawing.Color.Blue;
+            this.B3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.B3.Location = new System.Drawing.Point(243, 246);
+            this.B3.Name = "B3";
+            this.B3.Size = new System.Drawing.Size(43, 26);
+            this.B3.TabIndex = 96;
+            this.B3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.B3.Click += new System.EventHandler(this.startGameTimer);
+            this.B3.DoubleClick += new System.EventHandler(this.Clear);
+            this.B3.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox9
+            // B4
             // 
-            this.textBox9.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox9.ForeColor = System.Drawing.Color.Blue;
-            this.textBox9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox9.Location = new System.Drawing.Point(292, 246);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(43, 26);
-            this.textBox9.TabIndex = 97;
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.B4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.B4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.B4.ForeColor = System.Drawing.Color.Blue;
+            this.B4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.B4.Location = new System.Drawing.Point(292, 246);
+            this.B4.Name = "B4";
+            this.B4.Size = new System.Drawing.Size(43, 26);
+            this.B4.TabIndex = 97;
+            this.B4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.B4.Click += new System.EventHandler(this.startGameTimer);
+            this.B4.DoubleClick += new System.EventHandler(this.Clear);
+            this.B4.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox10
+            // L0
             // 
-            this.textBox10.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox10.ForeColor = System.Drawing.Color.Blue;
-            this.textBox10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox10.Location = new System.Drawing.Point(47, 86);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(43, 26);
-            this.textBox10.TabIndex = 98;
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.L0.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.L0.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.L0.ForeColor = System.Drawing.Color.Blue;
+            this.L0.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.L0.Location = new System.Drawing.Point(47, 86);
+            this.L0.Name = "L0";
+            this.L0.Size = new System.Drawing.Size(43, 26);
+            this.L0.TabIndex = 98;
+            this.L0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.L0.Click += new System.EventHandler(this.startGameTimer);
+            this.L0.DoubleClick += new System.EventHandler(this.Clear);
+            this.L0.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox11
+            // L1
             // 
-            this.textBox11.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox11.ForeColor = System.Drawing.Color.Blue;
-            this.textBox11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox11.Location = new System.Drawing.Point(47, 118);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(43, 26);
-            this.textBox11.TabIndex = 99;
-            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.L1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.L1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.L1.ForeColor = System.Drawing.Color.Blue;
+            this.L1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.L1.Location = new System.Drawing.Point(47, 118);
+            this.L1.Name = "L1";
+            this.L1.Size = new System.Drawing.Size(43, 26);
+            this.L1.TabIndex = 99;
+            this.L1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.L1.Click += new System.EventHandler(this.startGameTimer);
+            this.L1.DoubleClick += new System.EventHandler(this.Clear);
+            this.L1.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox12
+            // L2
             // 
-            this.textBox12.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox12.ForeColor = System.Drawing.Color.Blue;
-            this.textBox12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox12.Location = new System.Drawing.Point(47, 150);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(43, 26);
-            this.textBox12.TabIndex = 100;
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.L2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.L2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.L2.ForeColor = System.Drawing.Color.Blue;
+            this.L2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.L2.Location = new System.Drawing.Point(47, 150);
+            this.L2.Name = "L2";
+            this.L2.Size = new System.Drawing.Size(43, 26);
+            this.L2.TabIndex = 100;
+            this.L2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.L2.Click += new System.EventHandler(this.startGameTimer);
+            this.L2.DoubleClick += new System.EventHandler(this.Clear);
+            this.L2.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox13
+            // L3
             // 
-            this.textBox13.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox13.ForeColor = System.Drawing.Color.Blue;
-            this.textBox13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox13.Location = new System.Drawing.Point(47, 182);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(43, 26);
-            this.textBox13.TabIndex = 101;
-            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.L3.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.L3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.L3.ForeColor = System.Drawing.Color.Blue;
+            this.L3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.L3.Location = new System.Drawing.Point(47, 182);
+            this.L3.Name = "L3";
+            this.L3.Size = new System.Drawing.Size(43, 26);
+            this.L3.TabIndex = 101;
+            this.L3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.L3.Click += new System.EventHandler(this.startGameTimer);
+            this.L3.DoubleClick += new System.EventHandler(this.Clear);
+            this.L3.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox14
+            // L4
             // 
-            this.textBox14.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox14.ForeColor = System.Drawing.Color.Blue;
-            this.textBox14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox14.Location = new System.Drawing.Point(47, 214);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(43, 26);
-            this.textBox14.TabIndex = 102;
-            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.L4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.L4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.L4.ForeColor = System.Drawing.Color.Blue;
+            this.L4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.L4.Location = new System.Drawing.Point(47, 214);
+            this.L4.Name = "L4";
+            this.L4.Size = new System.Drawing.Size(43, 26);
+            this.L4.TabIndex = 102;
+            this.L4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.L4.Click += new System.EventHandler(this.startGameTimer);
+            this.L4.DoubleClick += new System.EventHandler(this.Clear);
+            this.L4.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox15
+            // R4
             // 
-            this.textBox15.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox15.ForeColor = System.Drawing.Color.Blue;
-            this.textBox15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox15.Location = new System.Drawing.Point(341, 214);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(43, 26);
-            this.textBox15.TabIndex = 103;
-            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.R4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.R4.ForeColor = System.Drawing.Color.Blue;
+            this.R4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.R4.Location = new System.Drawing.Point(341, 214);
+            this.R4.Name = "R4";
+            this.R4.Size = new System.Drawing.Size(43, 26);
+            this.R4.TabIndex = 103;
+            this.R4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R4.Click += new System.EventHandler(this.startGameTimer);
+            this.R4.DoubleClick += new System.EventHandler(this.Clear);
+            this.R4.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox16
+            // R3
             // 
-            this.textBox16.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox16.ForeColor = System.Drawing.Color.Blue;
-            this.textBox16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox16.Location = new System.Drawing.Point(341, 182);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(43, 26);
-            this.textBox16.TabIndex = 104;
-            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R3.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.R3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.R3.ForeColor = System.Drawing.Color.Blue;
+            this.R3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.R3.Location = new System.Drawing.Point(341, 182);
+            this.R3.Name = "R3";
+            this.R3.Size = new System.Drawing.Size(43, 26);
+            this.R3.TabIndex = 104;
+            this.R3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R3.Click += new System.EventHandler(this.startGameTimer);
+            this.R3.DoubleClick += new System.EventHandler(this.Clear);
+            this.R3.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox17
+            // R2
             // 
-            this.textBox17.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox17.ForeColor = System.Drawing.Color.Blue;
-            this.textBox17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox17.Location = new System.Drawing.Point(341, 150);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(43, 26);
-            this.textBox17.TabIndex = 105;
-            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.R2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.R2.ForeColor = System.Drawing.Color.Blue;
+            this.R2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.R2.Location = new System.Drawing.Point(341, 150);
+            this.R2.Name = "R2";
+            this.R2.Size = new System.Drawing.Size(43, 26);
+            this.R2.TabIndex = 105;
+            this.R2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R2.Click += new System.EventHandler(this.startGameTimer);
+            this.R2.DoubleClick += new System.EventHandler(this.Clear);
+            this.R2.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox18
+            // R1
             // 
-            this.textBox18.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox18.ForeColor = System.Drawing.Color.Blue;
-            this.textBox18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox18.Location = new System.Drawing.Point(341, 118);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(43, 26);
-            this.textBox18.TabIndex = 106;
-            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.R1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.R1.ForeColor = System.Drawing.Color.Blue;
+            this.R1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.R1.Location = new System.Drawing.Point(341, 118);
+            this.R1.Name = "R1";
+            this.R1.Size = new System.Drawing.Size(43, 26);
+            this.R1.TabIndex = 106;
+            this.R1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R1.Click += new System.EventHandler(this.startGameTimer);
+            this.R1.DoubleClick += new System.EventHandler(this.Clear);
+            this.R1.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox19
+            // R0
             // 
-            this.textBox19.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox19.ForeColor = System.Drawing.Color.Blue;
-            this.textBox19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox19.Location = new System.Drawing.Point(341, 86);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(43, 26);
-            this.textBox19.TabIndex = 107;
-            this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R0.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.R0.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.R0.ForeColor = System.Drawing.Color.Blue;
+            this.R0.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.R0.Location = new System.Drawing.Point(341, 86);
+            this.R0.Name = "R0";
+            this.R0.Size = new System.Drawing.Size(43, 26);
+            this.R0.TabIndex = 107;
+            this.R0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.R0.Click += new System.EventHandler(this.startGameTimer);
+            this.R0.DoubleClick += new System.EventHandler(this.Clear);
+            this.R0.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox20
+            // T0
             // 
-            this.textBox20.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox20.ForeColor = System.Drawing.Color.Blue;
-            this.textBox20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox20.Location = new System.Drawing.Point(96, 54);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(43, 26);
-            this.textBox20.TabIndex = 108;
-            this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.T0.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.T0.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.T0.ForeColor = System.Drawing.Color.Blue;
+            this.T0.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.T0.Location = new System.Drawing.Point(96, 54);
+            this.T0.Name = "T0";
+            this.T0.Size = new System.Drawing.Size(43, 26);
+            this.T0.TabIndex = 108;
+            this.T0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.T0.Click += new System.EventHandler(this.startGameTimer);
+            this.T0.DoubleClick += new System.EventHandler(this.Clear);
+            this.T0.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox21
+            // T1
             // 
-            this.textBox21.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox21.ForeColor = System.Drawing.Color.Blue;
-            this.textBox21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox21.Location = new System.Drawing.Point(145, 54);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(43, 26);
-            this.textBox21.TabIndex = 109;
-            this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.T1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.T1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.T1.ForeColor = System.Drawing.Color.Blue;
+            this.T1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.T1.Location = new System.Drawing.Point(145, 54);
+            this.T1.Name = "T1";
+            this.T1.Size = new System.Drawing.Size(43, 26);
+            this.T1.TabIndex = 109;
+            this.T1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.T1.Click += new System.EventHandler(this.startGameTimer);
+            this.T1.DoubleClick += new System.EventHandler(this.Clear);
+            this.T1.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox22
+            // T2
             // 
-            this.textBox22.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox22.ForeColor = System.Drawing.Color.Blue;
-            this.textBox22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox22.Location = new System.Drawing.Point(194, 54);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(43, 26);
-            this.textBox22.TabIndex = 110;
-            this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.T2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.T2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.T2.ForeColor = System.Drawing.Color.Blue;
+            this.T2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.T2.Location = new System.Drawing.Point(194, 54);
+            this.T2.Name = "T2";
+            this.T2.Size = new System.Drawing.Size(43, 26);
+            this.T2.TabIndex = 110;
+            this.T2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.T2.Click += new System.EventHandler(this.startGameTimer);
+            this.T2.DoubleClick += new System.EventHandler(this.Clear);
+            this.T2.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox23
+            // T3
             // 
-            this.textBox23.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox23.ForeColor = System.Drawing.Color.Blue;
-            this.textBox23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox23.Location = new System.Drawing.Point(243, 54);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(43, 26);
-            this.textBox23.TabIndex = 111;
-            this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.T3.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.T3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.T3.ForeColor = System.Drawing.Color.Blue;
+            this.T3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.T3.Location = new System.Drawing.Point(243, 54);
+            this.T3.Name = "T3";
+            this.T3.Size = new System.Drawing.Size(43, 26);
+            this.T3.TabIndex = 111;
+            this.T3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.T3.Click += new System.EventHandler(this.startGameTimer);
+            this.T3.DoubleClick += new System.EventHandler(this.Clear);
+            this.T3.Leave += new System.EventHandler(this.Check);
             // 
-            // textBox24
+            // T4
             // 
-            this.textBox24.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox24.ForeColor = System.Drawing.Color.Blue;
-            this.textBox24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox24.Location = new System.Drawing.Point(292, 54);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(43, 26);
-            this.textBox24.TabIndex = 112;
-            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.T4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.T4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.T4.ForeColor = System.Drawing.Color.Blue;
+            this.T4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.T4.Location = new System.Drawing.Point(292, 54);
+            this.T4.Name = "T4";
+            this.T4.Size = new System.Drawing.Size(43, 26);
+            this.T4.TabIndex = 112;
+            this.T4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.T4.Click += new System.EventHandler(this.startGameTimer);
+            this.T4.DoubleClick += new System.EventHandler(this.Clear);
+            this.T4.Leave += new System.EventHandler(this.Check);
             // 
             // gameTimer
             // 
@@ -786,30 +858,30 @@ namespace TermProj
             this.ClientSize = new System.Drawing.Size(443, 345);
             this.ControlBox = false;
             this.Controls.Add(this.g2_Time);
-            this.Controls.Add(this.textBox24);
-            this.Controls.Add(this.textBox23);
-            this.Controls.Add(this.textBox22);
-            this.Controls.Add(this.textBox21);
-            this.Controls.Add(this.textBox20);
-            this.Controls.Add(this.textBox19);
-            this.Controls.Add(this.textBox18);
-            this.Controls.Add(this.textBox17);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.T4);
+            this.Controls.Add(this.T3);
+            this.Controls.Add(this.T2);
+            this.Controls.Add(this.T1);
+            this.Controls.Add(this.T0);
+            this.Controls.Add(this.R0);
+            this.Controls.Add(this.R1);
+            this.Controls.Add(this.R2);
+            this.Controls.Add(this.R3);
+            this.Controls.Add(this.R4);
+            this.Controls.Add(this.L4);
+            this.Controls.Add(this.L3);
+            this.Controls.Add(this.L2);
+            this.Controls.Add(this.L1);
+            this.Controls.Add(this.L0);
+            this.Controls.Add(this.B4);
+            this.Controls.Add(this.B3);
+            this.Controls.Add(this.B2);
+            this.Controls.Add(this.B1);
+            this.Controls.Add(this.B0);
+            this.Controls.Add(this.CBL);
+            this.Controls.Add(this.CTR);
+            this.Controls.Add(this.CBR);
+            this.Controls.Add(this.CTL);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.labTimer);
             this.Controls.Add(this.txtBox44);
@@ -884,30 +956,30 @@ namespace TermProj
         private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox CTL;
+        private System.Windows.Forms.TextBox CBR;
+        private System.Windows.Forms.TextBox CTR;
+        private System.Windows.Forms.TextBox CBL;
+        private System.Windows.Forms.TextBox B0;
+        private System.Windows.Forms.TextBox B1;
+        private System.Windows.Forms.TextBox B2;
+        private System.Windows.Forms.TextBox B3;
+        private System.Windows.Forms.TextBox B4;
+        private System.Windows.Forms.TextBox L0;
+        private System.Windows.Forms.TextBox L1;
+        private System.Windows.Forms.TextBox L2;
+        private System.Windows.Forms.TextBox L3;
+        private System.Windows.Forms.TextBox L4;
+        private System.Windows.Forms.TextBox R4;
+        private System.Windows.Forms.TextBox R3;
+        private System.Windows.Forms.TextBox R2;
+        private System.Windows.Forms.TextBox R1;
+        private System.Windows.Forms.TextBox R0;
+        private System.Windows.Forms.TextBox T0;
+        private System.Windows.Forms.TextBox T1;
+        private System.Windows.Forms.TextBox T2;
+        private System.Windows.Forms.TextBox T3;
+        private System.Windows.Forms.TextBox T4;
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label g2_Time;
     }

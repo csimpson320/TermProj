@@ -15,13 +15,15 @@ namespace TermProj
         Help fmr_help;
         uint ticks;
         string time;
+        int uNum;
+        bool start = true;
         TextBox[,] game2Matrix;
-        int prevNum;
+        int prevNum, nxtNum;
         Random num = new Random();
         (short, short) r1Location;
         Stack<string> solNums = new Stack<string>();
         List<int> matrixNums = new List<int>(25);
-
+        List<int> game2Nums = new List<int>(24);
 
         public Game2()
         {
@@ -57,18 +59,23 @@ namespace TermProj
         private void pauseGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (gameTimer.Enabled)
-            {
                 gameTimer.Stop();
-            }
-            else
-            {
+        }
+
+        private void startGameTimer(object sender, EventArgs e)
+        {
+            if (gameTimer.Enabled == false)
                 gameTimer.Start();
-            }
         }
 
         private void abortGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            gameTimer.Stop();
+            var result = MessageBox.Show("Please confirm you would like to abort Game 2?", "Game Aborted!", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+                this.Close();
+            else
+                gameTimer.Start();
         }
 
         private void gameHistoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,6 +89,165 @@ namespace TermProj
             int r1 = num.Next(1, 26);
             PlaceRandom(r1);
             innerSolution();
+        }
+
+        private void Check(object sender, EventArgs e)
+        {
+            TextBox uInput = (TextBox)sender;
+            if (uInput.Text == "" == false)
+            {
+                try
+                {
+                    if (start)
+                    {
+                        start = false;
+                        prevNum = 1; nxtNum = 2;
+                    }
+                    
+                    //check if users input is valid
+                    uNum = Int32.Parse(uInput.Text);
+
+                    if (uNum < 2 || uNum > 25)
+                    {
+                        throw new Exception($"{uNum} is invalid. Please enter a number between 2-25");
+                    }
+
+                    if (game2Nums.Contains(uNum))
+                    {
+                        throw new Exception($"{uNum} has already been used, please choose the next number.");
+                    }
+
+                    if (CheckRowCol(uInput.Name, uInput.Text) == false)
+                    {
+                        throw new Exception($"{uNum} can not be placed in this location, please choose a location according to the rules.");
+                    }
+                    else
+                    {
+                        if (uNum != nxtNum)
+                        {
+                            //Console.WriteLine($"Previous Num = {prevNum}");
+                            //Console.WriteLine($"Next Num = {nxtNum}");
+                            throw new Exception($"You must enter the next sequential number, please enter {nxtNum}");
+                        }
+                        else
+                        {
+                            game2Nums.Add(uNum);
+                            prevNum++; nxtNum++;
+                            uInput.ReadOnly = true;
+                            uInput.Leave -= Check;
+                            //Console.WriteLine($"Previous Num = {prevNum}");
+                            //Console.WriteLine($"Next Num = {nxtNum}");
+                        }
+                        if (uNum == 25)
+                        {
+                            gameTimer.Stop();
+                            var result = MessageBox.Show("You win the game!\n\n" + $"You finished the game in {time}.",
+                                "Game Over!");
+                        }
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Please enter a valid number.", "Invalid Input!");
+                    uInput.Clear();
+                    uInput.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Invalid Input!");
+                    uInput.Clear();
+                    uInput.Focus();
+                }
+            }
+        }
+
+        private bool CheckRowCol(string name, string uInput)
+        {
+            if (name.StartsWith("L") || name.StartsWith("R"))
+            {
+                string sNum = name.Substring(name.Length - 1);
+                int num = Int32.Parse(sNum);
+                for (int row = num; row < num + 1; row++)
+                    for (int col = 0; col <= 4; col++)
+                    {
+                        if (uInput == game2Matrix[row, col].Text)
+                            return true;
+                    }
+            }
+            if (name.StartsWith("T") || name.StartsWith("B"))
+            {
+                string sNum = name.Substring(name.Length - 1);
+                int num = Int32.Parse(sNum);
+                for (int row = 0; row <= 4; row++)
+                    for (int col = num; col < num + 1; col++)
+                    {
+                        if (uInput == game2Matrix[row, col].Text)
+                            return true;
+                    }
+            }
+            if (name == "CTL" || name == "CBR")
+            {
+                int count = 0;
+                for (int row = count; row < count + 1; row++)
+                {
+                    for (int col = count; col < count + 1; col++)
+                    {
+                        if (uInput == game2Matrix[row, col].Text)
+                            return true;
+                    }
+                    count++;
+                }  
+            }
+            if (name == "CTR" || name == "CBL")
+            {
+                int count = 0, i = 4;
+                for (int row = count; row < count + 1; row++)
+                {
+                    for (int col = i; col > i - 1; col--)
+                    {
+                        if (uInput == game2Matrix[row, col].Text)
+                            return true;
+                    }
+                    count++; i--;
+                }
+            }
+            return false;
+        }
+
+        private void Clear(object sender, EventArgs e)
+        {
+            TextBox uInput = (TextBox)sender;
+            try
+            {
+                if (uInput.Text != "")
+                {
+                    if (uInput.Text != prevNum.ToString())
+                    {
+                        throw new Exception("Must clear numbers in reverse order if wish to change location.");
+                    }
+                    else
+                    {
+                        if (game2Nums.Contains(Int32.Parse(uInput.Text)))
+                        {
+                            game2Nums.Remove(Int32.Parse(uInput.Text));
+                        }
+                        prevNum--; nxtNum--;
+                        uInput.Clear();
+                        uInput.ReadOnly = false;
+                        uInput.Leave += Check;
+                        //Console.WriteLine($"Previous Num = {prevNum}");
+                        //Console.WriteLine($"Next Num = {nxtNum}");
+                    }
+                }
+                else
+                {
+                    throw new Exception("There is no number to clear.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!");
+            }
         }
 
         private (int r, int c) GetLocation(int num)
@@ -191,9 +357,6 @@ namespace TermProj
                     matrixNums.Add(prevNum); prevNum++; count++;
                 }
             }
-            if (matrixNums.Count() == 25)
-                gameTimer.Stop();
-            start = false;
         }
 
         private void PlaceRandom(int r)

@@ -51,7 +51,24 @@ namespace TermProj
         }
         private void abortGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            gameTimer.Stop();
+            var result = MessageBox.Show("You are aborting game 1. Would you like to start game 2?", "Game Aborted!", MessageBoxButtons.YesNoCancel);
+            if (result == DialogResult.Cancel)
+            {
+                gameTimer.Start();
+            }
+            if (result == DialogResult.No)
+            {
+                this.Close();
+            }
+            if (result == DialogResult.Yes)
+            {
+                Game2 game = new Game2();
+                game.TopLevel = true;
+                game.Parent = this.Parent;
+                game.ShowDialog();
+                this.Close();
+            }
         }
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,13 +80,13 @@ namespace TermProj
         private void pauseGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (gameTimer.Enabled)
-            {
                 gameTimer.Stop();
-            }
-            else
-            {
+        }
+
+        private void startGameTimer(object sender, EventArgs e)
+        {
+            if (gameTimer.Enabled == false)
                 gameTimer.Start();
-            }
         }
 
         private void startGame()
@@ -106,7 +123,6 @@ namespace TermProj
 
                     if (CheckAdjCells(uNum, prevNum) == false)
                     {
-                        Console.WriteLine($"Previous Num = {prevNum}");
                         throw new Exception($"{uNum} can not be placed in this location, please choose an adjancent location.");
                     }
                     else
@@ -129,8 +145,7 @@ namespace TermProj
                         if (uNum == 25)
                         {
                             gameTimer.Stop();
-                            var result = MessageBox.Show("You win the game!\n" +
-                                $"You finished the game in {time}.\n" + "Would you like to start Game 2?", 
+                            var result = MessageBox.Show("You win the game!\n\n" + $"You finished the game in {time}.\n\n Would you like to start Game 2?", 
                                 "Game Over!", MessageBoxButtons.YesNo);
                             if (result == DialogResult.No)
                             {
@@ -335,7 +350,7 @@ namespace TermProj
             if (matrixNums.Count() == 25)
             {
                 gameTimer.Stop();
-                var result = MessageBox.Show("The game solution has been provided.\n" +
+                var result = MessageBox.Show("The game solution has been provided.\n\n" +
                     "Would you like to start Game 2?",
                     "Game Over!", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No)

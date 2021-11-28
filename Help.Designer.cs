@@ -109,6 +109,10 @@ namespace TermProj
             this.Controls.Add(this.labGame1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.game1Pic);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1094, 759);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1094, 759);
             this.Name = "Help";
             this.Text = "Help";
             ((System.ComponentModel.ISupportInitialize)(this.game2Pic)).EndInit();

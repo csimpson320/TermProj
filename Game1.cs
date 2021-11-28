@@ -13,6 +13,7 @@ namespace TermProj
     public partial class Game1 : Form
     {
         Help fmr_help;
+        History fmr_history;
         uint ticks;
         string time;
         int uNum;
@@ -23,6 +24,8 @@ namespace TermProj
         bool startWithR1 = false;
         (short, short) r1Location;
         Stack<string> solNums = new Stack<string>();
+        string user = "NoName";
+        DateTime dt;
 
         public Game1()
         {
@@ -30,6 +33,7 @@ namespace TermProj
             gameTimer.Start();
             matrix = new TextBox[,] { { this.txtBox00, this.txtBox01, this.txtBox02, this.txtBox03, this.txtBox04 }, { this.txtBox10, this.txtBox11, this.txtBox12, this.txtBox13, this.txtBox14 }, { this.txtBox20, this.txtBox21, this.txtBox22, this.txtBox23, this.txtBox24 }, { this.txtBox30, this.txtBox31, this.txtBox32, this.txtBox33, this.txtBox34 }, { this.txtBox40, this.txtBox41, this.txtBox42, this.txtBox43, this.txtBox44 } };
             startGame();
+            dt = DateTime.Now;
         }
 
         private void gameTimer_Tick(object sender, EventArgs e)
@@ -42,6 +46,9 @@ namespace TermProj
 
         private void gameToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Game g = new Game(user, "Game 1", dt.ToString(), time, "User Quit!");
+            GameHistory h = new GameHistory();
+            h.SaveNewGame(g);
             this.Close();
         }
 
@@ -59,10 +66,16 @@ namespace TermProj
             }
             if (result == DialogResult.No)
             {
+                Game g = new Game(user, "Game 1", dt.ToString(), time, "Game Aborted!");
+                GameHistory h = new GameHistory();
+                h.SaveNewGame(g);
                 this.Close();
             }
             if (result == DialogResult.Yes)
             {
+                Game g = new Game(user, "Game 1", dt.ToString(), time, "Game Aborted!");
+                GameHistory h = new GameHistory();
+                h.SaveNewGame(g);
                 Game2 game = new Game2();
                 game.TopLevel = true;
                 game.Parent = this.Parent;
@@ -83,10 +96,25 @@ namespace TermProj
                 gameTimer.Stop();
         }
 
+        private void gameHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmr_history = new History();
+            fmr_history.ShowDialog();
+        }
+
         private void startGameTimer(object sender, EventArgs e)
         {
             if (gameTimer.Enabled == false)
                 gameTimer.Start();
+        }
+
+        private void UserClear(object sender, EventArgs e)
+        {
+            txtBoxUser.Clear();
+        }
+        private void ChgUser(object sender, EventArgs e)
+        {
+            user = txtBoxUser.Text;
         }
 
         private void startGame()
@@ -149,10 +177,16 @@ namespace TermProj
                                 "Game Over!", MessageBoxButtons.YesNo);
                             if (result == DialogResult.No)
                             {
+                                Game g = new Game(user, "Game 1", dt.ToString(), time, "Game Won!");
+                                GameHistory h = new GameHistory();
+                                h.SaveNewGame(g);
                                 this.Close();
                             }
                             if (result == DialogResult.Yes)
                             {
+                                Game g = new Game(user, "Game 1", dt.ToString(), time, "Game Won!");
+                                GameHistory h = new GameHistory();
+                                h.SaveNewGame(g);
                                 Game2 game = new Game2();
                                 game.TopLevel = true;
                                 game.Parent = this.Parent;
@@ -355,10 +389,16 @@ namespace TermProj
                     "Game Over!", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No)
                 {
+                    Game g = new Game(user, "Game 1", dt.ToString(), time, "Solution Provided!");
+                    GameHistory h = new GameHistory();
+                    h.SaveNewGame(g);
                     this.Close();
                 }
                 if (result == DialogResult.Yes)
                 {
+                    Game g = new Game(user, "Game 1", dt.ToString(), time, "Solution Provided!");
+                    GameHistory h = new GameHistory();
+                    h.SaveNewGame(g);
                     Game2 game = new Game2();
                     game.TopLevel = true;
                     game.Parent = this.Parent;

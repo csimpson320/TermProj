@@ -68,6 +68,8 @@ namespace TermProj
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.g1_Time = new System.Windows.Forms.Label();
+            this.labUser = new System.Windows.Forms.Label();
+            this.txtBoxUser = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +77,7 @@ namespace TermProj
             // 
             this.labTimer.AutoSize = true;
             this.labTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labTimer.Location = new System.Drawing.Point(110, 246);
+            this.labTimer.Location = new System.Drawing.Point(34, 225);
             this.labTimer.Name = "labTimer";
             this.labTimer.Size = new System.Drawing.Size(47, 20);
             this.labTimer.TabIndex = 61;
@@ -86,7 +88,7 @@ namespace TermProj
             this.txtBox44.BackColor = System.Drawing.Color.LightGray;
             this.txtBox44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox44.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox44.Location = new System.Drawing.Point(261, 193);
+            this.txtBox44.Location = new System.Drawing.Point(234, 177);
             this.txtBox44.Name = "txtBox44";
             this.txtBox44.Size = new System.Drawing.Size(43, 26);
             this.txtBox44.TabIndex = 60;
@@ -100,7 +102,7 @@ namespace TermProj
             this.txtBox43.BackColor = System.Drawing.Color.LightGray;
             this.txtBox43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox43.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox43.Location = new System.Drawing.Point(212, 193);
+            this.txtBox43.Location = new System.Drawing.Point(185, 177);
             this.txtBox43.Name = "txtBox43";
             this.txtBox43.Size = new System.Drawing.Size(43, 26);
             this.txtBox43.TabIndex = 59;
@@ -114,7 +116,7 @@ namespace TermProj
             this.txtBox42.BackColor = System.Drawing.Color.LightGray;
             this.txtBox42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox42.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox42.Location = new System.Drawing.Point(163, 193);
+            this.txtBox42.Location = new System.Drawing.Point(136, 177);
             this.txtBox42.Name = "txtBox42";
             this.txtBox42.Size = new System.Drawing.Size(43, 26);
             this.txtBox42.TabIndex = 58;
@@ -128,7 +130,7 @@ namespace TermProj
             this.txtBox41.BackColor = System.Drawing.Color.LightGray;
             this.txtBox41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox41.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox41.Location = new System.Drawing.Point(114, 193);
+            this.txtBox41.Location = new System.Drawing.Point(87, 177);
             this.txtBox41.Name = "txtBox41";
             this.txtBox41.Size = new System.Drawing.Size(43, 26);
             this.txtBox41.TabIndex = 57;
@@ -142,7 +144,7 @@ namespace TermProj
             this.txtBox40.BackColor = System.Drawing.Color.LightGray;
             this.txtBox40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox40.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox40.Location = new System.Drawing.Point(65, 193);
+            this.txtBox40.Location = new System.Drawing.Point(38, 177);
             this.txtBox40.Name = "txtBox40";
             this.txtBox40.Size = new System.Drawing.Size(43, 26);
             this.txtBox40.TabIndex = 56;
@@ -156,7 +158,7 @@ namespace TermProj
             this.txtBox34.BackColor = System.Drawing.Color.LightGray;
             this.txtBox34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox34.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox34.Location = new System.Drawing.Point(261, 161);
+            this.txtBox34.Location = new System.Drawing.Point(234, 145);
             this.txtBox34.Name = "txtBox34";
             this.txtBox34.Size = new System.Drawing.Size(43, 26);
             this.txtBox34.TabIndex = 55;
@@ -170,7 +172,7 @@ namespace TermProj
             this.txtBox33.BackColor = System.Drawing.Color.LightGray;
             this.txtBox33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox33.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox33.Location = new System.Drawing.Point(212, 161);
+            this.txtBox33.Location = new System.Drawing.Point(185, 145);
             this.txtBox33.Name = "txtBox33";
             this.txtBox33.Size = new System.Drawing.Size(43, 26);
             this.txtBox33.TabIndex = 54;
@@ -184,7 +186,7 @@ namespace TermProj
             this.txtBox32.BackColor = System.Drawing.Color.LightGray;
             this.txtBox32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox32.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox32.Location = new System.Drawing.Point(163, 161);
+            this.txtBox32.Location = new System.Drawing.Point(136, 145);
             this.txtBox32.Name = "txtBox32";
             this.txtBox32.Size = new System.Drawing.Size(43, 26);
             this.txtBox32.TabIndex = 53;
@@ -198,7 +200,7 @@ namespace TermProj
             this.txtBox31.BackColor = System.Drawing.Color.LightGray;
             this.txtBox31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox31.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox31.Location = new System.Drawing.Point(114, 161);
+            this.txtBox31.Location = new System.Drawing.Point(87, 145);
             this.txtBox31.Name = "txtBox31";
             this.txtBox31.Size = new System.Drawing.Size(43, 26);
             this.txtBox31.TabIndex = 52;
@@ -212,7 +214,7 @@ namespace TermProj
             this.txtBox30.BackColor = System.Drawing.Color.LightGray;
             this.txtBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox30.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox30.Location = new System.Drawing.Point(65, 161);
+            this.txtBox30.Location = new System.Drawing.Point(38, 145);
             this.txtBox30.Name = "txtBox30";
             this.txtBox30.Size = new System.Drawing.Size(43, 26);
             this.txtBox30.TabIndex = 51;
@@ -226,7 +228,7 @@ namespace TermProj
             this.txtBox24.BackColor = System.Drawing.Color.LightGray;
             this.txtBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox24.Location = new System.Drawing.Point(261, 129);
+            this.txtBox24.Location = new System.Drawing.Point(234, 113);
             this.txtBox24.Name = "txtBox24";
             this.txtBox24.Size = new System.Drawing.Size(43, 26);
             this.txtBox24.TabIndex = 50;
@@ -240,7 +242,7 @@ namespace TermProj
             this.txtBox23.BackColor = System.Drawing.Color.LightGray;
             this.txtBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox23.Location = new System.Drawing.Point(212, 129);
+            this.txtBox23.Location = new System.Drawing.Point(185, 113);
             this.txtBox23.Name = "txtBox23";
             this.txtBox23.Size = new System.Drawing.Size(43, 26);
             this.txtBox23.TabIndex = 49;
@@ -254,7 +256,7 @@ namespace TermProj
             this.txtBox22.BackColor = System.Drawing.Color.LightGray;
             this.txtBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox22.Location = new System.Drawing.Point(163, 129);
+            this.txtBox22.Location = new System.Drawing.Point(136, 113);
             this.txtBox22.Name = "txtBox22";
             this.txtBox22.Size = new System.Drawing.Size(43, 26);
             this.txtBox22.TabIndex = 48;
@@ -268,7 +270,7 @@ namespace TermProj
             this.txtBox21.BackColor = System.Drawing.Color.LightGray;
             this.txtBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox21.Location = new System.Drawing.Point(114, 129);
+            this.txtBox21.Location = new System.Drawing.Point(87, 113);
             this.txtBox21.Name = "txtBox21";
             this.txtBox21.Size = new System.Drawing.Size(43, 26);
             this.txtBox21.TabIndex = 47;
@@ -282,7 +284,7 @@ namespace TermProj
             this.txtBox20.BackColor = System.Drawing.Color.LightGray;
             this.txtBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox20.Location = new System.Drawing.Point(65, 129);
+            this.txtBox20.Location = new System.Drawing.Point(38, 113);
             this.txtBox20.Name = "txtBox20";
             this.txtBox20.Size = new System.Drawing.Size(43, 26);
             this.txtBox20.TabIndex = 46;
@@ -296,7 +298,7 @@ namespace TermProj
             this.txtBox14.BackColor = System.Drawing.Color.LightGray;
             this.txtBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox14.Location = new System.Drawing.Point(261, 97);
+            this.txtBox14.Location = new System.Drawing.Point(234, 81);
             this.txtBox14.Name = "txtBox14";
             this.txtBox14.Size = new System.Drawing.Size(43, 26);
             this.txtBox14.TabIndex = 45;
@@ -310,7 +312,7 @@ namespace TermProj
             this.txtBox13.BackColor = System.Drawing.Color.LightGray;
             this.txtBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox13.Location = new System.Drawing.Point(212, 97);
+            this.txtBox13.Location = new System.Drawing.Point(185, 81);
             this.txtBox13.Name = "txtBox13";
             this.txtBox13.Size = new System.Drawing.Size(43, 26);
             this.txtBox13.TabIndex = 44;
@@ -324,7 +326,7 @@ namespace TermProj
             this.txtBox12.BackColor = System.Drawing.Color.LightGray;
             this.txtBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox12.Location = new System.Drawing.Point(163, 97);
+            this.txtBox12.Location = new System.Drawing.Point(136, 81);
             this.txtBox12.Name = "txtBox12";
             this.txtBox12.Size = new System.Drawing.Size(43, 26);
             this.txtBox12.TabIndex = 43;
@@ -338,7 +340,7 @@ namespace TermProj
             this.txtBox11.BackColor = System.Drawing.Color.LightGray;
             this.txtBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox11.Location = new System.Drawing.Point(114, 97);
+            this.txtBox11.Location = new System.Drawing.Point(87, 81);
             this.txtBox11.Name = "txtBox11";
             this.txtBox11.Size = new System.Drawing.Size(43, 26);
             this.txtBox11.TabIndex = 42;
@@ -352,7 +354,7 @@ namespace TermProj
             this.txtBox10.BackColor = System.Drawing.Color.LightGray;
             this.txtBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox10.Location = new System.Drawing.Point(65, 97);
+            this.txtBox10.Location = new System.Drawing.Point(38, 81);
             this.txtBox10.Name = "txtBox10";
             this.txtBox10.Size = new System.Drawing.Size(43, 26);
             this.txtBox10.TabIndex = 41;
@@ -366,7 +368,7 @@ namespace TermProj
             this.txtBox04.BackColor = System.Drawing.Color.LightGray;
             this.txtBox04.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox04.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox04.Location = new System.Drawing.Point(261, 65);
+            this.txtBox04.Location = new System.Drawing.Point(234, 49);
             this.txtBox04.Name = "txtBox04";
             this.txtBox04.Size = new System.Drawing.Size(43, 26);
             this.txtBox04.TabIndex = 40;
@@ -380,7 +382,7 @@ namespace TermProj
             this.txtBox03.BackColor = System.Drawing.Color.LightGray;
             this.txtBox03.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox03.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox03.Location = new System.Drawing.Point(212, 65);
+            this.txtBox03.Location = new System.Drawing.Point(185, 49);
             this.txtBox03.Name = "txtBox03";
             this.txtBox03.Size = new System.Drawing.Size(43, 26);
             this.txtBox03.TabIndex = 39;
@@ -394,7 +396,7 @@ namespace TermProj
             this.txtBox02.BackColor = System.Drawing.Color.LightGray;
             this.txtBox02.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox02.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox02.Location = new System.Drawing.Point(163, 65);
+            this.txtBox02.Location = new System.Drawing.Point(136, 49);
             this.txtBox02.Name = "txtBox02";
             this.txtBox02.Size = new System.Drawing.Size(43, 26);
             this.txtBox02.TabIndex = 38;
@@ -408,7 +410,7 @@ namespace TermProj
             this.txtBox01.BackColor = System.Drawing.Color.LightGray;
             this.txtBox01.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox01.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox01.Location = new System.Drawing.Point(114, 65);
+            this.txtBox01.Location = new System.Drawing.Point(87, 49);
             this.txtBox01.Name = "txtBox01";
             this.txtBox01.Size = new System.Drawing.Size(43, 26);
             this.txtBox01.TabIndex = 37;
@@ -422,7 +424,7 @@ namespace TermProj
             this.txtBox00.BackColor = System.Drawing.Color.LightGray;
             this.txtBox00.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtBox00.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtBox00.Location = new System.Drawing.Point(65, 65);
+            this.txtBox00.Location = new System.Drawing.Point(38, 49);
             this.txtBox00.Name = "txtBox00";
             this.txtBox00.Size = new System.Drawing.Size(43, 26);
             this.txtBox00.TabIndex = 36;
@@ -439,7 +441,7 @@ namespace TermProj
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(382, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(316, 24);
             this.menuStrip1.TabIndex = 68;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -478,8 +480,9 @@ namespace TermProj
             // gameHistoryToolStripMenuItem
             // 
             this.gameHistoryToolStripMenuItem.Name = "gameHistoryToolStripMenuItem";
-            this.gameHistoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gameHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gameHistoryToolStripMenuItem.Text = "Game History";
+            this.gameHistoryToolStripMenuItem.Click += new System.EventHandler(this.gameHistoryToolStripMenuItem_Click);
             // 
             // quitToolStripMenuItem
             // 
@@ -520,17 +523,40 @@ namespace TermProj
             // 
             this.g1_Time.AutoSize = true;
             this.g1_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.g1_Time.Location = new System.Drawing.Point(163, 246);
+            this.g1_Time.Location = new System.Drawing.Point(87, 225);
             this.g1_Time.Name = "g1_Time";
             this.g1_Time.Size = new System.Drawing.Size(0, 20);
             this.g1_Time.TabIndex = 69;
+            // 
+            // labUser
+            // 
+            this.labUser.AutoSize = true;
+            this.labUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labUser.Location = new System.Drawing.Point(34, 260);
+            this.labUser.Name = "labUser";
+            this.labUser.Size = new System.Drawing.Size(47, 20);
+            this.labUser.TabIndex = 70;
+            this.labUser.Text = "User:";
+            // 
+            // txtBoxUser
+            // 
+            this.txtBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxUser.Location = new System.Drawing.Point(87, 259);
+            this.txtBoxUser.Name = "txtBoxUser";
+            this.txtBoxUser.Size = new System.Drawing.Size(120, 26);
+            this.txtBoxUser.TabIndex = 71;
+            this.txtBoxUser.Text = "Enter Name...";
+            this.txtBoxUser.TextChanged += new System.EventHandler(this.ChgUser);
+            this.txtBoxUser.Enter += new System.EventHandler(this.UserClear);
             // 
             // Game1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 299);
+            this.ClientSize = new System.Drawing.Size(316, 313);
             this.ControlBox = false;
+            this.Controls.Add(this.txtBoxUser);
+            this.Controls.Add(this.labUser);
             this.Controls.Add(this.g1_Time);
             this.Controls.Add(this.labTimer);
             this.Controls.Add(this.txtBox44);
@@ -559,6 +585,8 @@ namespace TermProj
             this.Controls.Add(this.txtBox01);
             this.Controls.Add(this.txtBox00);
             this.Controls.Add(this.menuStrip1);
+            this.MaximumSize = new System.Drawing.Size(332, 352);
+            this.MinimumSize = new System.Drawing.Size(332, 352);
             this.Name = "Game1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game1";
@@ -609,5 +637,7 @@ namespace TermProj
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label g1_Time;
+        private System.Windows.Forms.Label labUser;
+        private System.Windows.Forms.TextBox txtBoxUser;
     }
 }

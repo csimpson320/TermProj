@@ -13,6 +13,7 @@ namespace TermProj
     public partial class Game2 : Form
     {
         Help fmr_help;
+        History fmr_history;
         uint ticks;
         string time;
         int uNum;
@@ -24,12 +25,15 @@ namespace TermProj
         Stack<string> solNums = new Stack<string>();
         List<int> matrixNums = new List<int>(25);
         List<int> game2Nums = new List<int>(24);
+        string user = "NoName";
+        DateTime dt;
 
         public Game2()
         {
             InitializeComponent();
             startGame();
             gameTimer.Start();
+            dt = DateTime.Now;
         }
 
         private void gameTimer_Tick(object sender, EventArgs e)
@@ -48,6 +52,9 @@ namespace TermProj
 
         private void gameToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Game g = new Game(user, "Game 2", dt.ToString(), time, "User Quit!");
+            GameHistory h = new GameHistory();
+            h.SaveNewGame(g);
             this.Close();
         }
 
@@ -73,14 +80,29 @@ namespace TermProj
             gameTimer.Stop();
             var result = MessageBox.Show("Please confirm you would like to abort Game 2?", "Game Aborted!", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
+            {
+                Game g = new Game(user, "Game 2", dt.ToString(), time, "Game Aborted!");
+                GameHistory h = new GameHistory();
+                h.SaveNewGame(g);
                 this.Close();
+            }
             else
                 gameTimer.Start();
         }
 
         private void gameHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            fmr_history = new History();
+            fmr_history.ShowDialog();
+        }
 
+        private void UserClear(object sender, EventArgs e)
+        {
+            txtBoxUser.Clear();
+        }
+        private void ChgUser(object sender, EventArgs e)
+        {
+            user = txtBoxUser.Text;
         }
 
         private void startGame()
@@ -141,8 +163,11 @@ namespace TermProj
                         if (uNum == 25)
                         {
                             gameTimer.Stop();
-                            var result = MessageBox.Show("You win the game!\n\n" + $"You finished the game in {time}.",
+                            MessageBox.Show("You win the game!\n\n" + $"You finished the game in {time}.",
                                 "Game Over!");
+                            Game g = new Game(user, "Game 2", dt.ToString(), time, "Game Won!");
+                            GameHistory h = new GameHistory();
+                            h.SaveNewGame(g);
                         }
                     }
                 }

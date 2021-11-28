@@ -77,14 +77,14 @@ namespace TermProj
             // game1ToolStripMenuItem
             // 
             this.game1ToolStripMenuItem.Name = "game1ToolStripMenuItem";
-            this.game1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.game1ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.game1ToolStripMenuItem.Text = "Game 1";
             this.game1ToolStripMenuItem.Click += new System.EventHandler(this.game1ToolStripMenuItem_Click);
             // 
             // game2ToolStripMenuItem
             // 
             this.game2ToolStripMenuItem.Name = "game2ToolStripMenuItem";
-            this.game2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.game2ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.game2ToolStripMenuItem.Text = "Game 2";
             this.game2ToolStripMenuItem.Click += new System.EventHandler(this.game2ToolStripMenuItem_Click);
             // 
@@ -140,6 +140,8 @@ namespace TermProj
             this.Controls.Add(this.labSelect);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(420, 248);
+            this.MinimumSize = new System.Drawing.Size(420, 248);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matrix Game";

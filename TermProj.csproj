@@ -58,6 +58,7 @@
     <Compile Include="Game2.Designer.cs">
       <DependentUpon>Game2.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameHistory.cs" />
     <Compile Include="Help.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History.resx">
+      <DependentUpon>History.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

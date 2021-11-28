@@ -35,7 +35,8 @@ namespace TermProj
 
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            fmr_history = new History();
+            fmr_history.ShowDialog();
         }
 
         private void game1ToolStripMenuItem_Click(object sender, EventArgs e)

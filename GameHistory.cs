@@ -19,45 +19,53 @@ namespace TermProj
             List<Game> history = new List<Game>();
 
             if (!Directory.Exists(dir))
-            {
                 Directory.CreateDirectory(dir);
-            }
-            else
+
+            if (File.Exists(path))
             {
-                if (File.Exists(path))
+                using (StreamReader txtIn =
+                new StreamReader(
+                new FileStream(path, FileMode.Open, FileAccess.Read)))
                 {
-                    using (StreamReader txtIn =
-                    new StreamReader(
-                    new FileStream(path, FileMode.Open, FileAccess.Read)))
+                    while (txtIn.Peek() != -1)
                     {
-                        while (txtIn.Peek() != -1)
-                        {
-                            string row = txtIn.ReadLine();
-                            string[] cols = row.Split(',');
-                            Game g = new Game();
-                            g.DateTime = cols[0];
-                            g._User = cols[1];
-                            g._Game = cols[2];
-                            g.PlayTime = cols[3];
-                            g.Result = cols[4];
-                            history.Add(g);
-                        }
+                        string row = txtIn.ReadLine();
+                        string[] cols = row.Split(',');
+                        Game g = new Game();
+                        g.DateTime = cols[0];
+                        g._User = cols[1];
+                        g._Game = cols[2];
+                        g.PlayTime = cols[3];
+                        g.Result = cols[4];
+                        history.Add(g);
                     }
                 }
             }
             return history;
-            
         }
 
         public void SaveNewGame(Game newGame)
         {
             Games.Add(newGame);
 
-            using (StreamWriter txtOut =
-                new StreamWriter(
-                new FileStream(path, FileMode.Append, FileAccess.Write)))
+            if (!Directory.Exists(dir))
             {
-                txtOut.WriteLine($"{newGame.DateTime}, {newGame._User}, {newGame._Game}, {newGame.PlayTime}, {newGame.Result}");
+                Directory.CreateDirectory(dir);
+                using (StreamWriter txtOut =
+                    new StreamWriter(
+                    new FileStream(path, FileMode.Append, FileAccess.Write)))
+                {
+                    txtOut.WriteLine($"{newGame.DateTime}, {newGame._User}, {newGame._Game}, {newGame.PlayTime}, {newGame.Result}");
+                }
+            }
+            else
+            {
+                using (StreamWriter txtOut =
+                    new StreamWriter(
+                    new FileStream(path, FileMode.Append, FileAccess.Write)))
+                {
+                    txtOut.WriteLine($"{newGame.DateTime}, {newGame._User}, {newGame._Game}, {newGame.PlayTime}, {newGame.Result}");
+                }
             }
         }
     }

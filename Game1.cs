@@ -362,7 +362,6 @@ namespace TermProj
                 }
                 else
                 {
-                    Console.WriteLine(prevNum.ToString() + "  | else TOP");
                     List<(int, int)> adjCells = FindAdjCells(prevNum);
                     foreach ((int, int) location in adjCells)
                     {
@@ -377,7 +376,6 @@ namespace TermProj
                         }
                     }
                     matrixNums.Add(prevNum); prevNum++; count++;
-                    Console.WriteLine(prevNum.ToString() + "  | else BOTTOM");
                 }
             }
 
